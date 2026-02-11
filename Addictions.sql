@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.2
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Feb 04, 2026 at 09:10 AM
--- Server version: 5.7.24
--- PHP Version: 8.3.1
+-- Hôte : localhost:8889
+-- Généré le : mer. 04 fév. 2026 à 09:12
+-- Version du serveur : 8.0.40
+-- Version de PHP : 8.3.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,33 +18,33 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `addiction`
+-- Base de données : `Addictions`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `addiction_population_data`
+-- Structure de la table `addiction_population_data`
 --
 
 CREATE TABLE `addiction_population_data` (
-  `id` int(4) DEFAULT NULL,
+  `id` int DEFAULT NULL,
   `name` varchar(29) DEFAULT NULL,
-  `age` int(2) DEFAULT NULL,
+  `age` int DEFAULT NULL,
   `gender` varchar(6) DEFAULT NULL,
   `country` varchar(51) DEFAULT NULL,
   `city` varchar(24) DEFAULT NULL,
   `education_level` varchar(12) DEFAULT NULL,
   `employment_status` varchar(13) DEFAULT NULL,
-  `annual_income_usd` int(6) DEFAULT NULL,
+  `annual_income_usd` int DEFAULT NULL,
   `marital_status` varchar(17) DEFAULT NULL,
-  `children_count` int(1) DEFAULT NULL,
-  `smokes_per_day` int(2) DEFAULT NULL,
-  `drinks_per_week` int(2) DEFAULT NULL,
-  `age_started_smoking` int(2) DEFAULT NULL,
-  `age_started_drinking` int(2) DEFAULT NULL,
-  `attempts_to_quit_smoking` int(1) DEFAULT NULL,
-  `attempts_to_quit_drinking` int(1) DEFAULT NULL,
+  `children_count` int DEFAULT NULL,
+  `smokes_per_day` int DEFAULT NULL,
+  `drinks_per_week` int DEFAULT NULL,
+  `age_started_smoking` int DEFAULT NULL,
+  `age_started_drinking` int DEFAULT NULL,
+  `attempts_to_quit_smoking` int DEFAULT NULL,
+  `attempts_to_quit_drinking` int DEFAULT NULL,
   `has_health_issues` varchar(5) DEFAULT NULL,
   `mental_health_status` varchar(7) DEFAULT NULL,
   `exercise_frequency` varchar(6) DEFAULT NULL,
@@ -53,10 +53,10 @@ CREATE TABLE `addiction_population_data` (
   `bmi` decimal(3,1) DEFAULT NULL,
   `social_support` varchar(8) DEFAULT NULL,
   `therapy_history` varchar(7) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data for table `addiction_population_data`
+-- Déchargement des données de la table `addiction_population_data`
 --
 
 INSERT INTO `addiction_population_data` (`id`, `name`, `age`, `gender`, `country`, `city`, `education_level`, `employment_status`, `annual_income_usd`, `marital_status`, `children_count`, `smokes_per_day`, `drinks_per_week`, `age_started_smoking`, `age_started_drinking`, `attempts_to_quit_smoking`, `attempts_to_quit_drinking`, `has_health_issues`, `mental_health_status`, `exercise_frequency`, `diet_quality`, `sleep_hours`, `bmi`, `social_support`, `therapy_history`) VALUES
@@ -3076,12 +3076,238 @@ INSERT INTO `addiction_population_data` (`id`, `name`, `age`, `gender`, `country
 -- --------------------------------------------------------
 
 --
--- Table structure for table `students_social_media_addiction`
+-- Structure de la table `mobile_addiction_data`
+--
+
+CREATE TABLE `mobile_addiction_data` (
+  `User_ID` int DEFAULT NULL,
+  `Country` varchar(7) DEFAULT NULL,
+  `Age` int DEFAULT NULL,
+  `Gender` varchar(6) DEFAULT NULL,
+  `Occupation` varchar(11) DEFAULT NULL,
+  `Education_Level` varchar(11) DEFAULT NULL,
+  `Income_USD` decimal(8,2) DEFAULT NULL,
+  `Daily_Screen_Time_Hours` decimal(4,2) DEFAULT NULL,
+  `Phone_Unlocks_Per_Day` int DEFAULT NULL,
+  `Social_Media_Usage_Hours` decimal(4,2) DEFAULT NULL,
+  `Gaming_Usage_Hours` decimal(4,2) DEFAULT NULL,
+  `Streaming_Usage_Hours` decimal(4,2) DEFAULT NULL,
+  `Messaging_Usage_Hours` decimal(4,2) DEFAULT NULL,
+  `Work_Related_Usage_Hours` decimal(4,2) DEFAULT NULL,
+  `Sleep_Hours` decimal(4,2) DEFAULT NULL,
+  `Physical_Activity_Hours` decimal(4,2) DEFAULT NULL,
+  `Mental_Health_Score` decimal(4,2) DEFAULT NULL,
+  `Depression_Score` decimal(4,2) DEFAULT NULL,
+  `Anxiety_Score` decimal(4,2) DEFAULT NULL,
+  `Stress_Level` decimal(4,2) DEFAULT NULL,
+  `Relationship_Status` varchar(15) DEFAULT NULL,
+  `Has_Children` varchar(3) DEFAULT NULL,
+  `Urban_or_Rural` varchar(5) DEFAULT NULL,
+  `Time_Spent_With_Family_Hours` decimal(4,2) DEFAULT NULL,
+  `Online_Shopping_Hours` decimal(4,2) DEFAULT NULL,
+  `Internet_Connection_Type` varchar(4) DEFAULT NULL,
+  `Primary_Device_Brand` varchar(7) DEFAULT NULL,
+  `Has_Screen_Time_Management_App` varchar(3) DEFAULT NULL,
+  `Self_Reported_Addiction_Level` varchar(8) DEFAULT NULL,
+  `Monthly_Data_Usage_GB` decimal(5,2) DEFAULT NULL,
+  `Has_Night_Mode_On` varchar(3) DEFAULT NULL,
+  `Age_First_Phone` int DEFAULT NULL,
+  `Push_Notifications_Per_Day` int DEFAULT NULL,
+  `Tech_Savviness_Score` decimal(4,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Déchargement des données de la table `mobile_addiction_data`
+--
+
+INSERT INTO `mobile_addiction_data` (`User_ID`, `Country`, `Age`, `Gender`, `Occupation`, `Education_Level`, `Income_USD`, `Daily_Screen_Time_Hours`, `Phone_Unlocks_Per_Day`, `Social_Media_Usage_Hours`, `Gaming_Usage_Hours`, `Streaming_Usage_Hours`, `Messaging_Usage_Hours`, `Work_Related_Usage_Hours`, `Sleep_Hours`, `Physical_Activity_Hours`, `Mental_Health_Score`, `Depression_Score`, `Anxiety_Score`, `Stress_Level`, `Relationship_Status`, `Has_Children`, `Urban_or_Rural`, `Time_Spent_With_Family_Hours`, `Online_Shopping_Hours`, `Internet_Connection_Type`, `Primary_Device_Brand`, `Has_Screen_Time_Management_App`, `Self_Reported_Addiction_Level`, `Monthly_Data_Usage_GB`, `Has_Night_Mode_On`, `Age_First_Phone`, `Push_Notifications_Per_Day`, `Tech_Savviness_Score`) VALUES
+(1, 'India', 32, 'Male', 'Salesperson', 'High School', 43865.49, 5.81, 75, 0.84, -1.55, 3.36, 1.44, 2.14, 5.22, 1.32, 61.47, 80.80, 23.72, 95.80, 'Single', 'No', 'Rural', 1.70, 1.85, '5G', 'Other', 'No', 'Low', 16.43, 'Yes', 16, 106, 39.36),
+(2, 'UK', 26, 'Male', 'Artist', 'Master\'s', 41868.19, 9.05, 61, 3.13, 2.50, 0.80, 2.42, 1.44, 6.23, 0.66, 96.11, 98.99, 39.72, 25.03, 'In Relationship', 'No', 'Rural', 0.90, 0.66, '4G', 'Samsung', 'Yes', 'Severe', 32.87, 'No', 12, 111, 9.45),
+(3, 'Germany', 70, 'Other', 'Doctor', 'High School', 59636.51, 5.76, 58, 2.12, 1.96, 1.84, 1.98, 1.92, 6.57, 1.93, 73.68, 44.64, 94.47, 99.54, 'Single', 'Yes', 'Urban', 1.69, -0.14, 'WiFi', 'Samsung', 'Yes', 'Severe', 27.45, 'No', 18, 90, 50.27),
+(4, 'UK', 44, 'Female', 'Engineer', 'None', 39022.07, 6.71, 80, 1.60, 2.70, 1.90, 2.43, 1.82, 7.27, 0.94, 53.42, 10.89, 5.03, 66.49, 'In Relationship', 'No', 'Urban', 1.11, 0.17, '3G', 'Apple', 'Yes', 'Moderate', 30.85, 'No', 17, 60, 30.82),
+(5, 'Brazil', 46, 'Other', 'Student', 'None', -783.98, 6.31, 136, 1.51, 1.73, 1.48, 1.30, 1.76, 5.43, 1.04, 67.01, 37.54, 17.29, 14.72, 'Divorced', 'No', 'Urban', 1.06, 0.58, '3G', 'Xiaomi', 'No', 'High', 10.38, 'Yes', 18, 127, 21.70),
+(6, 'Japan', 34, 'Male', 'Student', 'PhD', 19751.80, 8.94, 129, 2.28, 2.49, 0.97, 1.39, 2.66, 6.21, 1.14, 25.15, 97.45, 65.54, 63.04, 'Married', 'No', 'Rural', 1.32, 0.40, '5G', 'Xiaomi', 'No', 'Low', 17.51, 'No', 8, 78, 14.38),
+(7, 'China', 51, 'Male', 'Doctor', 'Master\'s', 22956.76, 4.18, 65, 1.75, 2.07, 0.33, 1.58, 1.98, 4.84, 1.33, 4.94, 27.16, 80.16, 83.20, 'In Relationship', 'No', 'Urban', 1.08, 0.88, 'WiFi', 'Huawei', 'Yes', 'Severe', 44.52, 'No', 11, 82, 79.63),
+(8, 'Russia', 68, 'Male', 'Salesperson', 'High School', 62102.93, 10.05, 87, 2.13, 2.99, 1.67, 2.06, 1.51, 6.81, 1.43, 44.33, 95.16, 20.94, 62.53, 'Divorced', 'Yes', 'Rural', 1.02, 0.77, '5G', 'Samsung', 'Yes', 'Low', 26.66, 'No', 12, 102, 52.16),
+(9, 'Nigeria', 33, 'Other', 'Salesperson', 'None', 26629.11, 7.45, 50, 2.02, 0.49, 2.41, 1.60, 2.98, 6.54, 1.40, 55.45, 59.96, 95.10, 95.94, 'Divorced', 'No', 'Urban', 0.77, 0.10, '5G', 'Apple', 'Yes', 'High', 24.49, 'No', 8, 85, 31.52),
+(10, 'India', 38, 'Other', 'Salesperson', 'High School', 43121.39, 6.87, 95, 2.27, 0.00, 2.44, 1.37, 2.55, 6.04, 1.55, 85.13, 38.30, 4.32, 33.65, 'Divorced', 'No', 'Urban', 1.74, 1.82, '4G', 'OnePlus', 'Yes', 'High', 29.05, 'No', 14, 120, 97.40),
+(11, 'Brazil', 36, 'Male', 'Teacher', 'Master\'s', 20817.23, 5.87, 94, 1.46, 2.47, 2.14, 1.36, 2.29, 5.41, 0.61, 43.34, 11.48, 36.97, 9.31, 'Single', 'Yes', 'Urban', 1.93, 1.24, 'WiFi', 'Other', 'Yes', 'High', 25.57, 'No', 8, 70, 22.05),
+(12, 'Russia', 34, 'Male', 'Manager', 'Bachelor\'s', 33236.88, 8.09, 86, 2.58, 1.89, 2.42, 0.98, 2.19, 6.52, 0.79, 7.35, 93.59, 43.44, 69.66, 'Divorced', 'No', 'Urban', 2.53, 1.23, '4G', 'Other', 'No', 'Moderate', 17.14, 'No', 13, 95, 24.82),
+(13, 'USA', 18, 'Female', 'Engineer', 'Bachelor\'s', 16430.69, 5.01, 75, 1.12, 0.69, 1.26, 1.63, 1.11, 7.42, 1.40, 88.70, 58.26, 24.99, 23.15, 'Divorced', 'Yes', 'Urban', 2.16, -0.23, '4G', 'Samsung', 'Yes', 'Severe', 29.76, 'Yes', 8, 112, 37.84),
+(14, 'Germany', 49, 'Female', 'Teacher', 'High School', 30612.87, 5.22, 62, 3.16, 2.58, 2.25, 1.02, 3.23, 6.26, 0.33, 11.29, 68.24, 83.12, 79.94, 'Married', 'Yes', 'Rural', 1.21, 1.52, '3G', 'Huawei', 'No', 'Moderate', 26.45, 'No', 17, 98, 62.58),
+(15, 'India', 62, 'Other', 'Student', 'High School', 10372.75, 9.32, 69, 2.64, 0.78, 1.55, 1.21, 2.54, 7.10, 0.56, 28.51, 81.22, 25.05, 77.97, 'Married', 'Yes', 'Rural', 1.64, 0.73, '4G', 'Other', 'No', 'Moderate', 34.46, 'Yes', 16, 116, 31.80),
+(16, 'Japan', 58, 'Male', 'Artist', 'High School', 33600.33, 4.68, 108, 2.43, 1.86, 4.63, 2.34, 1.32, 6.21, 1.11, 80.67, 5.48, 42.45, 16.43, 'Single', 'Yes', 'Rural', 1.09, 0.33, '5G', 'Xiaomi', 'No', 'Severe', 7.12, 'Yes', 16, 93, 7.82),
+(17, 'USA', 51, 'Other', 'Manager', 'None', 41764.15, 8.19, 47, 1.29, 1.72, 1.44, 1.16, 2.72, 6.34, 0.35, 99.02, 39.11, 41.98, 77.20, 'In Relationship', 'Yes', 'Rural', 1.64, 0.37, 'WiFi', 'Xiaomi', 'No', 'Moderate', 23.55, 'Yes', 12, 149, 10.65),
+(18, 'Mexico', 18, 'Male', 'Doctor', 'PhD', 40513.10, 6.06, 68, 1.38, -0.52, 1.27, 1.99, 2.46, 6.68, 1.07, 61.56, 51.64, 48.92, 41.25, 'In Relationship', 'No', 'Urban', 2.33, 0.90, '4G', 'Xiaomi', 'No', 'Severe', 31.20, 'No', 13, 12, 47.86),
+(19, 'USA', 33, 'Male', 'Manager', 'None', 6521.03, 5.79, 47, -0.22, 0.34, 1.88, 1.23, 1.11, 4.86, 1.11, 28.44, 29.96, 15.42, 16.75, 'Married', 'Yes', 'Rural', -0.18, 0.77, 'WiFi', 'Xiaomi', 'No', 'Severe', 41.45, 'Yes', 11, 99, 14.92),
+(20, 'India', 22, 'Other', 'Manager', 'PhD', 40098.41, 5.64, 99, 2.87, 0.51, 2.44, 1.11, 4.06, 6.29, 0.77, 34.91, 65.10, 76.13, 72.57, 'Married', 'Yes', 'Rural', 1.55, 1.05, '3G', 'Xiaomi', 'Yes', 'Severe', 21.51, 'Yes', 20, 52, 63.38),
+(21, 'UK', 67, 'Female', 'Manager', 'Master\'s', -21472.99, 5.85, 55, 2.20, 0.11, 1.70, 0.44, 3.10, 7.27, 0.46, 24.76, 14.33, 43.02, 29.00, 'Divorced', 'No', 'Urban', 1.84, 0.61, '4G', 'OnePlus', 'No', 'High', 26.45, 'Yes', 18, 40, 13.40),
+(22, 'UK', 15, 'Male', 'Unemployed', 'Master\'s', 32969.28, 6.28, 129, 1.39, 2.58, 1.65, 1.82, 2.63, 6.58, 1.12, 71.66, 98.86, 78.81, 62.92, 'In Relationship', 'No', 'Rural', 0.04, 0.31, '5G', 'Samsung', 'Yes', 'High', 32.38, 'No', 18, 124, 15.88),
+(23, 'UK', 12, 'Male', 'Unemployed', 'PhD', 26712.11, 4.43, 77, 1.25, 0.81, 1.11, 1.58, 2.45, 4.43, 1.27, 24.99, 85.28, 84.19, 64.97, 'In Relationship', 'Yes', 'Urban', 3.18, 2.45, '3G', 'Apple', 'No', 'Severe', 29.83, 'Yes', 16, 125, 71.33),
+(24, 'Nigeria', 47, 'Other', 'Unemployed', 'PhD', 21716.65, 4.58, 94, 3.55, 2.35, 0.58, 1.90, 2.13, 5.93, 1.11, 63.32, 31.19, 16.00, 78.69, 'Single', 'No', 'Rural', 1.84, 0.63, '3G', 'Samsung', 'No', 'Moderate', 42.61, 'Yes', 14, 193, 23.43),
+(25, 'Germany', 59, 'Female', 'Unemployed', 'PhD', 9842.34, 8.01, 109, 0.84, 1.82, 1.55, 1.80, 0.57, 4.92, 0.53, 75.96, 72.52, 58.81, 56.49, 'In Relationship', 'No', 'Urban', 2.36, 0.81, '4G', 'OnePlus', 'Yes', 'Severe', 44.71, 'Yes', 10, 102, 88.11),
+(26, 'Russia', 14, 'Female', 'Doctor', 'High School', 13479.02, -0.06, 124, 2.58, 0.22, 1.15, 1.90, 0.81, 6.71, 0.31, 42.89, 32.28, 3.62, 45.07, 'Married', 'No', 'Urban', 2.52, 1.15, '5G', 'Other', 'No', 'High', 21.46, 'Yes', 15, 100, 67.37),
+(27, 'India', 17, 'Female', 'Unemployed', 'High School', 56916.82, 7.96, 21, 2.48, 1.25, 3.64, 1.13, 0.29, 5.76, 0.58, 23.22, 29.45, 67.50, 31.97, 'Single', 'No', 'Urban', 1.86, 1.32, 'WiFi', 'Other', 'Yes', 'High', 33.24, 'Yes', 16, 81, 27.39),
+(28, 'China', 18, 'Male', 'Unemployed', 'High School', 9879.63, 4.42, 79, 1.30, 3.61, 1.52, 1.43, 1.93, 4.39, 1.65, 94.47, 72.47, 23.06, 37.18, 'In Relationship', 'Yes', 'Urban', 0.46, 1.24, '4G', 'Apple', 'Yes', 'High', 35.65, 'Yes', 13, 110, 20.23),
+(29, 'Japan', 16, 'Female', 'Teacher', 'PhD', 24063.91, 5.36, 86, 1.94, 1.09, 1.76, 0.63, 0.25, 5.92, 0.70, 22.59, 34.05, 51.70, 97.24, 'Divorced', 'No', 'Urban', 0.92, 1.12, '4G', 'OnePlus', 'No', 'High', 31.07, 'No', 16, 80, 60.18),
+(30, 'UK', 54, 'Female', 'Teacher', 'PhD', 30169.20, 4.15, 90, 0.56, -0.66, 1.93, 0.76, 5.00, 6.70, 1.37, 89.20, 22.99, 18.36, 40.77, 'In Relationship', 'No', 'Urban', 2.49, 0.85, '5G', 'Samsung', 'Yes', 'High', 30.12, 'Yes', 16, 113, 29.02),
+(31, 'Russia', 46, 'Female', 'Unemployed', 'High School', 42586.10, 10.78, 42, 3.40, 2.39, 2.24, 1.06, 0.75, 6.35, 0.26, 67.33, 3.06, 87.38, 97.16, 'Divorced', 'Yes', 'Rural', 1.43, 0.47, '3G', 'Huawei', 'Yes', 'Severe', 20.09, 'No', 8, 48, 25.30),
+(32, 'China', 18, 'Female', 'Engineer', 'Bachelor\'s', 9612.64, 4.27, 105, 0.47, 1.87, 2.34, 1.44, 1.55, 5.48, 0.26, 36.60, 46.42, 1.04, 36.40, 'Single', 'Yes', 'Urban', 2.36, 0.95, 'WiFi', 'Xiaomi', 'No', 'Severe', 31.13, 'Yes', 11, 97, 93.39),
+(33, 'USA', 40, 'Male', 'Salesperson', 'Bachelor\'s', 36207.99, 7.94, 65, 0.61, 1.54, 3.28, 0.90, 2.89, 6.25, 0.55, 18.91, 97.11, 55.54, 75.19, 'In Relationship', 'Yes', 'Rural', 2.11, 0.96, 'WiFi', 'Apple', 'No', 'Severe', 9.38, 'Yes', 20, 125, 11.80),
+(34, 'Nigeria', 17, 'Female', 'Student', 'Bachelor\'s', 31923.16, 6.01, 95, 2.40, 2.31, 1.83, 1.15, 2.13, 4.71, 0.98, 82.92, 16.80, 95.53, 64.49, 'Divorced', 'Yes', 'Rural', 2.29, 1.24, 'WiFi', 'Apple', 'No', 'High', 14.30, 'No', 8, 116, 59.43),
+(35, 'Nigeria', 50, 'Female', 'Salesperson', 'Master\'s', 23504.44, 5.26, 105, 2.16, 2.41, 2.47, 0.63, 2.06, 6.57, 2.00, 80.94, 28.70, 17.27, 65.33, 'Single', 'No', 'Urban', 1.24, 1.18, '5G', 'Xiaomi', 'No', 'Moderate', 28.07, 'No', 10, 70, 54.43),
+(36, 'UK', 18, 'Other', 'Manager', 'Bachelor\'s', 29571.43, 3.89, 61, 1.17, 0.34, 1.40, 2.79, 2.58, 7.26, 1.17, 66.65, 78.05, 62.70, 24.48, 'Divorced', 'No', 'Urban', 2.26, 0.64, '5G', 'Other', 'Yes', 'Low', 17.60, 'No', 13, 107, 47.43),
+(37, 'UK', 54, 'Other', 'Teacher', 'PhD', 35539.71, 5.17, 7, 3.29, -0.50, 0.04, 1.52, 3.05, 5.07, 1.63, 57.16, 71.46, 77.56, 95.05, 'In Relationship', 'Yes', 'Urban', 0.87, 2.04, '3G', 'Samsung', 'Yes', 'High', 24.14, 'No', 11, 166, 80.00),
+(38, 'Mexico', 59, 'Other', 'Unemployed', 'High School', 24786.22, 6.01, 16, 4.17, 0.70, 4.16, 1.51, 1.95, 6.38, 1.22, 61.62, 23.85, 6.22, 72.13, 'Single', 'No', 'Urban', 1.15, 0.44, '3G', 'Xiaomi', 'Yes', 'Severe', 38.26, 'No', 14, 124, 11.56),
+(39, 'Germany', 49, 'Female', 'Doctor', 'Master\'s', 25684.77, 6.45, 107, 1.81, 0.71, 1.23, 2.17, 2.38, 5.63, 1.48, 1.02, 67.08, 74.55, 8.49, 'Divorced', 'No', 'Urban', 1.17, 0.87, '4G', 'OnePlus', 'No', 'High', 22.68, 'Yes', 15, 50, 88.27),
+(40, 'UK', 47, 'Other', 'Doctor', 'Bachelor\'s', 23753.87, 4.56, 115, 1.83, 0.31, 1.66, 1.25, 1.62, 7.09, 1.41, 26.41, 36.12, 72.11, 98.84, 'In Relationship', 'Yes', 'Rural', 0.91, 0.65, '5G', 'Xiaomi', 'No', 'Low', 42.36, 'Yes', 15, 61, 82.60),
+(41, 'Germany', 38, 'Female', 'Teacher', 'None', 43091.25, 4.88, 85, 3.66, -0.02, 2.25, 1.66, 1.56, 5.72, 1.36, 58.50, 43.49, 63.54, 99.88, 'Married', 'No', 'Rural', 0.19, -0.51, '4G', 'Xiaomi', 'No', 'Severe', 22.04, 'No', 9, 111, 67.72),
+(42, 'India', 17, 'Male', 'Manager', 'PhD', 13863.74, 5.56, 58, 2.67, 1.92, 3.25, 2.16, 1.37, 5.67, 1.54, 78.56, 34.31, 89.73, 63.77, 'In Relationship', 'No', 'Rural', 1.94, 1.59, '4G', 'Xiaomi', 'No', 'Severe', 34.47, 'Yes', 18, 28, 29.77),
+(43, 'Nigeria', 47, 'Male', 'Artist', 'Master\'s', 28528.62, 9.18, 88, 2.81, 1.21, 3.73, 2.01, 2.57, 6.09, 1.18, 79.83, 45.83, 98.40, 76.86, 'Married', 'No', 'Rural', 1.54, 1.14, 'WiFi', 'Other', 'No', 'High', 25.39, 'No', 19, 160, 58.95),
+(44, 'USA', 62, 'Male', 'Student', 'High School', 62484.72, 6.87, 53, 2.69, 2.99, 1.73, 1.26, 2.00, 5.68, 1.07, 55.67, 56.57, 81.09, 65.26, 'Single', 'No', 'Urban', 3.40, 0.47, '3G', 'Apple', 'Yes', 'High', 17.15, 'Yes', 18, 89, 40.94),
+(45, 'Germany', 42, 'Male', 'Salesperson', 'None', 42534.62, 7.72, 108, 0.72, 0.48, 4.21, 1.73, 0.81, 7.42, 2.19, 63.37, 72.28, 95.69, 89.11, 'In Relationship', 'Yes', 'Rural', 2.54, 1.56, 'WiFi', 'Xiaomi', 'No', 'Severe', 28.43, 'No', 15, 139, 10.96),
+(46, 'Russia', 34, 'Male', 'Unemployed', 'None', 48243.73, 5.45, 109, 2.15, 2.12, 2.05, 1.98, 2.28, 6.73, 0.95, 14.52, 73.58, 81.41, 95.95, 'Single', 'No', 'Urban', 1.59, 0.77, '4G', 'Xiaomi', 'Yes', 'Low', 22.10, 'Yes', 17, 63, 58.83),
+(47, 'Mexico', 66, 'Female', 'Student', 'Master\'s', 26120.83, 9.69, 83, 1.24, 1.58, 1.85, 2.15, 0.61, 6.76, 0.96, 75.76, 8.95, 13.34, 32.51, 'Divorced', 'Yes', 'Urban', 2.64, 1.56, '5G', 'Other', 'Yes', 'High', 43.65, 'Yes', 11, 75, 89.02),
+(48, 'China', 32, 'Male', 'Unemployed', 'PhD', 10927.61, 7.23, 77, 2.07, 0.66, 3.28, 0.66, 2.61, 6.71, 0.83, 92.29, 90.53, 11.02, 34.39, 'Single', 'Yes', 'Rural', 0.03, 0.66, 'WiFi', 'Other', 'Yes', 'High', 13.82, 'No', 14, 68, 44.07),
+(49, 'UK', 46, 'Male', 'Student', 'Bachelor\'s', 12708.12, 9.25, 65, 2.59, 0.99, 0.74, 1.09, 0.95, 4.96, 0.49, 47.99, 31.00, 82.24, 55.28, 'Divorced', 'Yes', 'Rural', 0.01, 0.89, '5G', 'Huawei', 'Yes', 'Moderate', 15.60, 'Yes', 15, 120, 86.55),
+(50, 'Brazil', 27, 'Female', 'Salesperson', 'Master\'s', 52830.16, 4.56, 98, 1.34, 3.93, 3.21, 1.65, 1.86, 6.23, 1.18, 80.13, 40.45, 94.74, 42.98, 'Single', 'Yes', 'Urban', 0.32, 1.01, '3G', 'OnePlus', 'Yes', 'High', 30.48, 'Yes', 8, 82, 55.60),
+(51, 'China', 37, 'Female', 'Doctor', 'Bachelor\'s', 50032.14, 6.17, 54, 3.43, 1.07, 1.67, 1.94, 1.28, 7.97, 0.77, 65.88, 9.34, 2.02, 76.90, 'Divorced', 'Yes', 'Urban', 1.15, 1.14, '4G', 'Huawei', 'Yes', 'High', 24.92, 'Yes', 14, 92, 59.20),
+(52, 'China', 25, 'Male', 'Teacher', 'High School', 31163.24, 6.53, 75, 1.52, -0.13, -1.03, 1.34, 1.96, 7.56, 1.76, 21.55, 14.31, 41.51, 2.16, 'In Relationship', 'No', 'Urban', 0.98, 0.44, '3G', 'Xiaomi', 'Yes', 'High', 11.21, 'Yes', 19, 116, 76.07),
+(53, 'Mexico', 57, 'Other', 'Teacher', 'PhD', 35511.04, 6.44, 49, 1.77, 0.89, 1.81, 0.94, 3.66, 6.51, -0.01, 65.48, 40.72, 81.61, 58.22, 'Divorced', 'Yes', 'Rural', 1.57, 1.34, '3G', 'Other', 'No', 'High', 24.30, 'Yes', 17, 144, 85.57),
+(54, 'UK', 31, 'Male', 'Student', 'High School', 38344.74, 8.83, 120, 0.99, 1.03, 2.06, 1.14, 2.06, 6.10, 0.43, 66.24, 36.80, 89.56, 70.19, 'Divorced', 'No', 'Rural', 0.93, 1.13, 'WiFi', 'Samsung', 'Yes', 'Severe', 24.13, 'No', 13, 126, 7.09),
+(55, 'Brazil', 34, 'Male', 'Doctor', 'High School', 28172.69, 9.20, 30, 2.71, 0.24, 1.65, 1.88, 2.37, 8.51, 0.65, 36.67, 65.96, 45.73, 59.98, 'Single', 'No', 'Urban', 0.00, 0.76, '4G', 'Samsung', 'No', 'Severe', 8.50, 'No', 11, 152, 43.01),
+(56, 'China', 16, 'Other', 'Unemployed', 'None', 22885.39, 5.10, 69, 2.82, 2.06, 1.93, 0.75, 1.57, 6.98, 1.24, 88.38, 30.27, 47.69, 98.91, 'Divorced', 'No', 'Rural', 2.92, 0.98, '3G', 'Apple', 'No', 'High', 37.69, 'No', 8, 59, 37.46),
+(57, 'Russia', 21, 'Female', 'Doctor', 'PhD', 50990.32, 5.63, 60, -0.04, 1.09, 3.39, 2.25, 2.62, 7.06, 1.03, 7.33, 70.80, 69.04, 62.79, 'Single', 'No', 'Rural', 1.44, 0.88, '4G', 'Xiaomi', 'No', 'Moderate', 25.95, 'No', 14, 84, 53.32),
+(58, 'UK', 25, 'Female', 'Doctor', 'High School', 24001.72, 5.09, 64, 4.05, 2.61, -0.48, 1.62, 1.15, 4.94, 0.50, 31.06, 63.01, 39.36, 30.55, 'Married', 'Yes', 'Rural', 2.63, 1.90, 'WiFi', 'Huawei', 'No', 'High', 21.62, 'No', 20, 107, 90.12),
+(59, 'Germany', 25, 'Other', 'Unemployed', 'High School', 59738.40, 3.20, 69, 3.31, 1.78, 2.24, 1.15, 1.74, 6.94, 0.33, 62.13, 15.61, 46.93, 49.47, 'Married', 'No', 'Rural', 1.45, 1.46, '5G', 'Apple', 'No', 'Low', 32.37, 'Yes', 18, 67, 23.12),
+(60, 'Brazil', 59, 'Other', 'Manager', 'High School', 16298.43, 5.25, 91, 1.85, 0.00, 0.59, 1.22, 2.27, 5.90, 1.50, 50.48, 30.54, 38.26, 70.90, 'In Relationship', 'No', 'Urban', 2.21, 0.58, '4G', 'Apple', 'Yes', 'High', 29.65, 'No', 16, 58, 34.40),
+(61, 'Japan', 14, 'Other', 'Doctor', 'High School', 21647.36, 7.28, 101, 1.19, 2.02, 0.65, 2.23, 3.13, 7.51, -0.84, 30.22, 52.72, 65.14, 34.35, 'In Relationship', 'Yes', 'Rural', 1.73, 0.94, 'WiFi', 'Huawei', 'No', 'Severe', 35.58, 'No', 12, 76, 86.85),
+(62, 'Brazil', 50, 'Male', 'Unemployed', 'High School', 28480.64, 4.63, 118, 3.40, 4.86, 1.97, 2.31, 0.80, 6.26, 0.33, 65.63, 14.28, 46.05, 87.64, 'Single', 'Yes', 'Rural', 1.97, 0.64, '5G', 'Samsung', 'No', 'Low', 19.01, 'No', 13, 122, 10.24),
+(63, 'Brazil', 42, 'Male', 'Unemployed', 'Bachelor\'s', 34912.73, 5.99, 87, -0.37, 1.43, 2.78, 1.68, 0.34, 8.21, 0.25, 61.22, 76.34, 83.18, 45.30, 'Married', 'Yes', 'Rural', 1.99, 0.61, '5G', 'Samsung', 'No', 'Moderate', 16.92, 'No', 12, 74, 71.71),
+(64, 'China', 23, 'Female', 'Student', 'High School', 40365.08, 5.22, 74, 2.70, 0.41, -0.51, 0.76, 0.17, 6.56, 0.06, 13.94, 5.95, 65.65, 14.50, 'Married', 'No', 'Rural', 1.64, 1.43, '5G', 'OnePlus', 'Yes', 'High', 12.46, 'Yes', 18, 99, 5.36),
+(65, 'UK', 55, 'Female', 'Doctor', 'High School', 11564.19, 6.72, 63, 0.25, 1.10, -0.06, 1.81, 1.29, 5.24, 0.19, 29.64, 46.71, 39.98, 6.84, 'Married', 'Yes', 'Urban', 0.65, 0.48, '4G', 'Samsung', 'No', 'High', 29.67, 'Yes', 14, 119, 94.71),
+(66, 'Brazil', 50, 'Male', 'Unemployed', 'PhD', 38790.85, 6.58, 114, 1.79, 1.00, 0.93, 1.27, 0.04, 4.84, -0.04, 93.90, 6.94, 3.70, 83.94, 'Single', 'Yes', 'Rural', -1.60, 0.87, '4G', 'OnePlus', 'No', 'Low', 42.12, 'No', 20, 90, 44.54),
+(67, 'Japan', 59, 'Male', 'Doctor', 'None', 47005.77, 8.95, 105, 1.05, 1.96, 1.17, 1.92, 4.96, 5.22, 1.33, 31.85, 73.41, 42.08, 56.05, 'Divorced', 'No', 'Rural', 2.27, 1.18, '3G', 'Apple', 'Yes', 'Moderate', 29.23, 'Yes', 15, 74, 75.53),
+(68, 'Mexico', 55, 'Female', 'Salesperson', 'Bachelor\'s', 9517.08, 6.12, 77, 3.24, 2.05, 0.72, 0.86, 2.08, 6.63, 0.69, 52.36, 45.07, 84.10, 16.22, 'Single', 'Yes', 'Rural', 1.63, 0.41, '3G', 'OnePlus', 'No', 'Low', 8.02, 'Yes', 16, 91, 93.70),
+(69, 'Nigeria', 13, 'Female', 'Unemployed', 'Master\'s', 155.29, 6.81, 63, 4.07, 0.89, 0.67, 1.43, 1.90, 7.07, 0.85, 94.57, 82.30, 11.24, 18.05, 'In Relationship', 'No', 'Urban', 1.95, 0.81, '3G', 'OnePlus', 'Yes', 'High', 1.95, 'No', 9, 114, 9.58),
+(70, 'Brazil', 39, 'Female', 'Student', 'None', 20238.23, 4.09, 84, 2.99, 0.55, 1.73, 1.35, 1.20, 7.22, 1.16, 27.86, 49.68, 66.16, 67.93, 'In Relationship', 'Yes', 'Rural', 1.50, 0.75, '3G', 'OnePlus', 'No', 'High', 33.77, 'Yes', 8, 105, 21.08),
+(71, 'UK', 65, 'Other', 'Doctor', 'PhD', 48786.48, 4.27, 50, 1.89, 2.75, 2.68, 1.50, 3.78, 7.57, 0.70, 87.39, 82.16, 37.88, 38.73, 'Married', 'Yes', 'Rural', 0.67, 0.16, 'WiFi', 'Huawei', 'No', 'Low', 19.81, 'Yes', 14, 101, 11.00),
+(72, 'Russia', 44, 'Male', 'Manager', 'High School', 39615.51, 9.74, 78, 3.01, 1.50, 2.25, 1.31, 1.46, 8.08, 1.55, 7.90, 63.70, 77.90, 68.99, 'Divorced', 'No', 'Urban', 0.72, 0.80, '4G', 'OnePlus', 'No', 'Severe', 34.63, 'No', 14, 48, 80.59),
+(73, 'China', 16, 'Male', 'Teacher', 'High School', -7701.20, 6.28, 101, 2.08, 1.34, 2.26, 1.34, 0.59, 5.48, 1.93, 77.04, 55.87, 54.35, 27.69, 'Single', 'No', 'Rural', 0.69, 0.30, '4G', 'Apple', 'Yes', 'Severe', 19.04, 'Yes', 13, 145, 15.07),
+(74, 'UK', 47, 'Other', 'Manager', 'Master\'s', 44849.63, 4.07, 46, 2.28, 1.09, 2.98, 1.15, 0.57, 6.98, 1.03, 62.33, 9.62, 63.37, 63.99, 'In Relationship', 'Yes', 'Rural', 1.40, 1.06, 'WiFi', 'Apple', 'Yes', 'Severe', 24.22, 'No', 16, 126, 38.17),
+(75, 'Japan', 29, 'Male', 'Artist', 'None', 35015.00, 3.71, 89, 3.17, 3.63, 1.50, 1.45, 0.29, 5.45, 0.58, 64.90, 39.62, 86.44, 35.29, 'Single', 'Yes', 'Rural', 2.03, 0.72, '5G', 'OnePlus', 'Yes', 'Low', 19.58, 'No', 8, 107, 72.55),
+(76, 'USA', 29, 'Male', 'Manager', 'Master\'s', 31616.51, 7.70, 122, 3.59, 1.33, 1.70, 1.84, 0.56, 6.25, 0.88, 55.45, 24.62, 62.99, 56.50, 'Married', 'Yes', 'Urban', 1.87, 0.82, '4G', 'Huawei', 'No', 'Moderate', 13.80, 'Yes', 16, 139, 65.71),
+(77, 'China', 38, 'Female', 'Doctor', 'High School', 29280.66, 4.63, 94, 1.13, 0.79, 3.15, 1.13, 2.71, 7.16, 0.74, 88.53, 42.89, 64.86, 46.61, 'Divorced', 'No', 'Rural', 1.78, 0.90, '5G', 'Other', 'Yes', 'High', 28.34, 'Yes', 15, 99, 32.92),
+(78, 'Japan', 68, 'Female', 'Artist', 'Bachelor\'s', 33812.35, 9.60, 56, 1.56, 1.24, 1.35, 0.90, 1.69, 6.81, 0.72, 53.56, 97.23, 21.40, 89.63, 'Married', 'No', 'Urban', 1.78, 0.78, '3G', 'Samsung', 'No', 'High', 31.51, 'No', 19, 105, 90.51),
+(79, 'USA', 63, 'Other', 'Doctor', 'High School', 34178.38, 5.22, 100, 0.79, 0.36, 2.05, 1.41, 1.80, 7.09, -0.09, 94.09, 22.65, 7.84, 60.80, 'In Relationship', 'Yes', 'Rural', 1.42, 0.65, 'WiFi', 'OnePlus', 'Yes', 'Low', 20.69, 'Yes', 18, 104, 73.33),
+(80, 'Brazil', 41, 'Female', 'Teacher', 'Master\'s', 56991.84, 5.99, 72, 1.75, 1.33, 0.36, 2.18, 2.47, 6.58, 1.20, 22.03, 92.76, 77.63, 65.72, 'In Relationship', 'Yes', 'Rural', 1.22, 0.52, '3G', 'Apple', 'Yes', 'Severe', 20.12, 'No', 8, 71, 71.11),
+(81, 'Russia', 40, 'Other', 'Artist', 'High School', 39205.15, 4.53, 64, 2.24, 1.73, 2.11, 1.47, 1.32, 6.72, 1.23, 6.98, 83.55, 81.48, 77.15, 'In Relationship', 'No', 'Rural', 0.43, 1.24, 'WiFi', 'Huawei', 'Yes', 'Low', 19.75, 'Yes', 8, 112, 77.84),
+(82, 'Brazil', 26, 'Female', 'Doctor', 'High School', 41868.24, 5.68, 87, 1.92, 0.56, 4.27, 0.96, 2.32, 5.51, 1.12, 27.36, 47.94, 1.06, 19.54, 'In Relationship', 'No', 'Urban', 1.19, 1.11, '5G', 'Huawei', 'Yes', 'High', 12.84, 'Yes', 14, 89, 47.55),
+(83, 'USA', 46, 'Female', 'Manager', 'Bachelor\'s', 39494.59, 4.61, 109, 1.97, 1.24, 2.36, 0.95, 1.11, 6.77, 1.33, 94.44, 17.05, 51.26, 50.02, 'In Relationship', 'No', 'Rural', 1.48, 0.35, 'WiFi', 'Xiaomi', 'Yes', 'High', 26.30, 'No', 13, 44, 28.01),
+(84, 'USA', 59, 'Female', 'Teacher', 'Bachelor\'s', 49427.11, 6.80, 31, 1.81, 2.72, 2.64, 1.71, 2.44, 5.14, 0.94, 79.70, 85.58, 51.55, 84.52, 'In Relationship', 'Yes', 'Rural', 1.19, -0.12, '4G', 'Other', 'Yes', 'Low', 33.24, 'Yes', 14, 75, 54.30),
+(85, 'Mexico', 12, 'Female', 'Teacher', 'None', 23264.34, 9.80, 88, 2.53, 1.30, 3.14, 1.82, 2.49, 6.05, 0.39, 0.28, 58.83, 12.46, 94.93, 'Divorced', 'Yes', 'Urban', 1.68, 0.22, '5G', 'Samsung', 'No', 'Moderate', 23.17, 'No', 19, 121, 77.98),
+(86, 'Russia', 45, 'Male', 'Engineer', 'None', 49187.32, 4.96, 94, 1.24, 0.64, 2.58, 1.52, 2.77, 7.94, 0.94, 16.40, 18.51, 49.18, 83.53, 'Married', 'Yes', 'Rural', 2.18, 1.38, 'WiFi', 'Samsung', 'Yes', 'Low', 20.99, 'No', 9, 92, 38.39),
+(87, 'Russia', 12, 'Male', 'Unemployed', 'High School', 33210.31, 6.69, 90, 2.12, 1.18, 1.97, 1.58, 2.78, 6.53, 1.23, 41.23, 86.29, 60.25, 20.71, 'Divorced', 'Yes', 'Rural', 0.35, 1.35, '5G', 'Xiaomi', 'Yes', 'Low', 36.31, 'No', 20, 86, 14.96),
+(88, 'China', 31, 'Female', 'Manager', 'High School', 19853.02, 7.48, 57, 0.78, 2.53, 3.32, 1.96, 2.19, 6.41, 1.88, 13.82, 33.50, 84.26, 71.97, 'Married', 'Yes', 'Urban', -0.20, 0.63, '3G', 'OnePlus', 'Yes', 'Severe', 17.64, 'No', 20, 126, 3.50),
+(89, 'Russia', 13, 'Female', 'Doctor', 'None', 45078.73, 4.67, 58, 0.80, 1.61, 2.40, 1.19, 1.68, 6.30, 0.96, 20.18, 77.07, 52.43, 27.53, 'Divorced', 'No', 'Rural', 2.47, 0.72, '4G', 'Other', 'Yes', 'Low', 7.47, 'No', 17, 107, 30.23),
+(90, 'India', 43, 'Male', 'Student', 'None', 40001.47, 8.00, 54, 1.70, 2.51, 2.81, 2.41, 1.60, 5.00, 1.94, 82.65, 16.78, 4.67, 34.74, 'Married', 'Yes', 'Urban', 0.51, 1.27, '4G', 'Other', 'Yes', 'Low', 12.85, 'Yes', 12, 80, 89.22),
+(91, 'Germany', 45, 'Other', 'Unemployed', 'PhD', 22681.57, 4.51, 74, 1.20, 1.77, 2.10, 0.82, 2.85, 7.41, 1.10, 24.87, 34.52, 99.35, 41.89, 'Married', 'Yes', 'Urban', 1.33, 1.31, '3G', 'OnePlus', 'Yes', 'Low', 19.68, 'No', 10, 84, 54.30),
+(92, 'UK', 34, 'Male', 'Teacher', 'None', 37654.04, 6.09, 80, 3.49, 1.53, 2.42, 1.77, 0.62, 5.37, 0.66, 59.94, 39.44, 96.74, 66.08, 'Married', 'No', 'Rural', 0.47, 1.25, '5G', 'Huawei', 'No', 'Moderate', 13.40, 'Yes', 12, 80, 4.15),
+(93, 'Mexico', 41, 'Other', 'Unemployed', 'Master\'s', 47500.35, 7.27, 51, 2.02, 1.41, 2.96, 0.75, 2.89, 7.16, 0.52, 27.59, 62.76, 45.01, 34.64, 'Divorced', 'Yes', 'Urban', 0.73, 0.83, 'WiFi', 'Xiaomi', 'Yes', 'Severe', 25.44, 'No', 16, 109, 53.05),
+(94, 'USA', 46, 'Male', 'Artist', 'High School', 24913.49, 9.73, 113, 2.01, 0.51, 1.01, 2.05, 1.88, 7.42, 1.47, 54.86, 85.18, 10.79, 1.23, 'Divorced', 'No', 'Urban', 1.84, 1.08, '3G', 'OnePlus', 'No', 'Moderate', 18.08, 'Yes', 15, 108, 82.69),
+(95, 'UK', 65, 'Male', 'Engineer', 'High School', 29245.43, 9.15, 61, 1.78, 2.55, 1.62, 1.43, 3.54, 7.28, 0.90, 19.26, 17.60, 63.03, 1.79, 'Divorced', 'Yes', 'Rural', 0.86, 1.44, '4G', 'Xiaomi', 'Yes', 'High', 13.81, 'No', 18, 104, 58.16),
+(96, 'Nigeria', 61, 'Female', 'Unemployed', 'Bachelor\'s', 47934.80, 2.84, 74, 1.01, 2.07, 1.80, 1.70, 2.20, 8.08, 1.34, 81.58, 41.91, 64.41, 57.63, 'Married', 'No', 'Rural', 0.44, 0.36, '3G', 'Huawei', 'No', 'Moderate', 16.09, 'Yes', 11, 124, 10.40),
+(97, 'UK', 68, 'Other', 'Artist', 'None', 62572.99, 4.89, 9, 3.03, 2.51, 2.64, 0.66, 2.08, 6.62, 0.41, 91.48, 48.10, 16.22, 38.25, 'Married', 'No', 'Urban', 1.36, 1.32, 'WiFi', 'OnePlus', 'No', 'Moderate', 10.06, 'No', 20, 108, 34.64),
+(98, 'UK', 29, 'Female', 'Unemployed', 'High School', -9350.05, 6.85, 81, 2.78, 0.16, 1.19, 1.81, 1.59, 7.63, 0.98, 81.20, 65.85, 85.37, 10.32, 'Divorced', 'Yes', 'Urban', 0.05, 0.53, '5G', 'OnePlus', 'Yes', 'Moderate', 13.82, 'No', 18, 85, 74.49),
+(99, 'Russia', 33, 'Male', 'Unemployed', 'Master\'s', 11015.03, 7.67, 51, 1.63, 1.11, 0.96, 2.63, 0.91, 6.67, 0.60, 9.33, 9.41, 26.87, 14.66, 'Single', 'Yes', 'Rural', 2.26, 1.80, '3G', 'Huawei', 'Yes', 'High', 5.42, 'No', 9, 109, 5.29),
+(100, 'Germany', 44, 'Female', 'Manager', 'High School', 45582.24, 5.64, 33, 0.29, 2.67, 2.06, 1.11, 3.34, 8.92, 0.37, 0.60, 49.56, 44.10, 26.55, 'In Relationship', 'Yes', 'Rural', 1.52, -0.04, '3G', 'OnePlus', 'Yes', 'High', 28.74, 'Yes', 17, 137, 99.51),
+(101, 'Japan', 55, 'Female', 'Manager', 'None', 15099.60, 3.88, 98, 2.73, 1.76, 0.72, 1.50, 2.34, 5.24, 0.69, 20.28, 4.79, 9.75, 36.84, 'Married', 'Yes', 'Rural', 1.19, 0.71, '4G', 'Huawei', 'No', 'Moderate', 25.58, 'No', 8, 43, 28.86),
+(102, 'Japan', 47, 'Other', 'Unemployed', 'None', 31784.28, 4.02, 106, 1.91, 1.74, 1.38, 1.88, 0.65, 7.34, 0.90, 75.96, 76.02, 14.22, 23.79, 'Single', 'No', 'Rural', 0.73, 1.14, 'WiFi', 'Huawei', 'No', 'Low', 23.66, 'Yes', 19, 69, 32.80),
+(103, 'Brazil', 52, 'Male', 'Artist', 'Master\'s', 43330.67, 9.93, 97, 3.25, 0.92, 3.18, 1.74, 2.25, 7.93, 1.15, 50.73, 64.35, 0.92, 53.70, 'Single', 'No', 'Urban', 1.65, 0.51, 'WiFi', 'Xiaomi', 'Yes', 'Low', 36.03, 'Yes', 12, 137, 38.23),
+(104, 'UK', 46, 'Female', 'Doctor', 'High School', 19597.85, 3.40, 101, 3.38, 2.17, 1.21, 1.37, 1.37, 5.11, 1.12, 53.55, 11.24, 23.35, 20.23, 'In Relationship', 'Yes', 'Urban', 1.02, 0.48, '5G', 'Xiaomi', 'No', 'Severe', 10.09, 'No', 20, 96, 48.08),
+(105, 'Nigeria', 30, 'Other', 'Unemployed', 'None', 51452.01, 6.64, 102, 3.78, 0.92, 1.65, 1.59, 2.62, 6.44, 0.64, 69.32, 95.71, 25.37, 26.99, 'In Relationship', 'Yes', 'Rural', 0.65, -0.32, '4G', 'Samsung', 'No', 'Low', 29.19, 'No', 12, 159, 75.97),
+(106, 'India', 67, 'Other', 'Teacher', 'High School', 31561.00, 2.32, 38, 0.92, 1.85, 3.54, 1.47, 1.04, 5.70, 1.40, 56.09, 85.75, 98.90, 72.57, 'Married', 'No', 'Urban', 0.98, 0.68, '4G', 'Xiaomi', 'Yes', 'Moderate', 18.73, 'No', 10, 81, 52.88),
+(107, 'Germany', 22, 'Other', 'Artist', 'PhD', 31211.77, 5.51, 1, 2.22, 1.16, 1.56, 0.64, 3.46, 6.65, 0.98, 57.30, 8.54, 65.39, 35.96, 'In Relationship', 'No', 'Urban', 2.73, 0.12, 'WiFi', 'Xiaomi', 'No', 'High', 10.70, 'No', 16, 114, 56.04),
+(108, 'India', 25, 'Male', 'Engineer', 'None', 33764.87, 7.53, 66, 1.04, 2.06, 1.68, 1.67, 4.12, 7.74, 0.57, 65.38, 67.87, 22.90, 91.08, 'Divorced', 'No', 'Urban', 3.61, 0.01, '5G', 'Apple', 'No', 'Severe', 40.48, 'No', 18, 87, 93.27),
+(109, 'Mexico', 31, 'Other', 'Artist', 'PhD', 40698.17, 5.37, 47, 2.36, 1.12, 3.24, 1.35, 1.32, 8.74, 1.49, 57.79, 86.64, 93.01, 68.94, 'Married', 'Yes', 'Rural', 1.37, 0.65, '3G', 'Other', 'Yes', 'Low', 29.96, 'Yes', 13, 76, 87.66),
+(110, 'Russia', 42, 'Other', 'Teacher', 'Master\'s', 38171.95, 5.25, 66, 2.52, -0.17, 1.20, 1.77, 2.08, 4.29, 0.65, 25.76, 8.77, 21.70, 95.88, 'Married', 'No', 'Urban', 0.60, 1.43, '4G', 'Xiaomi', 'No', 'High', 22.11, 'No', 8, 139, 54.51),
+(111, 'China', 23, 'Female', 'Artist', 'High School', 25240.61, 1.29, 99, 0.36, 1.92, 1.45, 1.77, 0.98, 7.15, 0.35, 71.77, 37.52, 38.64, 70.23, 'Single', 'No', 'Rural', 1.19, 0.70, '5G', 'Other', 'Yes', 'Low', 21.07, 'Yes', 16, 57, 72.69),
+(112, 'Japan', 54, 'Male', 'Engineer', 'None', 7000.46, 3.56, 114, 1.87, 1.68, 1.56, 1.57, 2.24, 6.11, 1.02, 32.09, 78.92, 60.37, 76.50, 'Divorced', 'No', 'Urban', 0.95, 0.41, '4G', 'OnePlus', 'No', 'High', 30.00, 'No', 20, 116, 8.74),
+(113, 'UK', 27, 'Other', 'Teacher', 'None', 31369.91, 5.30, 97, 1.59, 3.11, 0.62, 1.33, 0.86, 6.76, 0.35, 33.45, 13.22, 16.18, 97.11, 'Married', 'No', 'Urban', 1.72, 0.73, 'WiFi', 'Xiaomi', 'No', 'High', 24.62, 'No', 17, 117, 29.18),
+(114, 'Nigeria', 29, 'Male', 'Student', 'None', 202.00, 6.05, 125, 1.40, 2.30, 3.01, 0.71, 1.20, 4.52, 1.83, 75.48, 12.30, 36.31, 5.37, 'In Relationship', 'No', 'Rural', 1.71, 0.31, '3G', 'Apple', 'Yes', 'Severe', 37.08, 'Yes', 15, 133, 1.72),
+(115, 'Nigeria', 56, 'Male', 'Artist', 'PhD', 16006.75, 5.33, 26, 3.00, 1.67, 2.44, 1.84, 1.52, 6.66, 0.84, 27.97, 80.52, 92.60, 33.94, 'Divorced', 'Yes', 'Rural', 1.48, 1.40, '3G', 'Apple', 'No', 'Severe', 17.81, 'Yes', 19, 84, 48.26),
+(116, 'Nigeria', 18, 'Female', 'Engineer', 'Bachelor\'s', 35403.59, 6.39, 68, 2.00, 2.30, 1.42, 1.08, 0.42, 6.67, 0.77, 89.80, 51.75, 18.08, 95.48, 'In Relationship', 'Yes', 'Urban', 1.07, 0.77, 'WiFi', 'Apple', 'No', 'Low', 15.68, 'Yes', 13, 100, 81.47),
+(117, 'USA', 21, 'Female', 'Unemployed', 'None', 771.79, 6.67, 115, 1.70, 1.44, 1.31, 1.36, 2.09, 6.63, 0.62, 29.21, 79.50, 60.90, 76.13, 'Divorced', 'No', 'Urban', 2.18, 0.68, '3G', 'Apple', 'No', 'Severe', 29.50, 'Yes', 16, 127, 87.60),
+(118, 'USA', 66, 'Other', 'Teacher', 'Master\'s', 13300.09, 2.36, 96, 2.53, 1.86, 0.35, 1.58, 1.64, 6.77, 0.67, 81.16, 46.03, 88.33, 32.06, 'In Relationship', 'No', 'Rural', 0.17, 0.75, '5G', 'OnePlus', 'Yes', 'Severe', 17.67, 'No', 8, 94, 70.73),
+(119, 'USA', 59, 'Other', 'Engineer', 'Master\'s', 32539.33, 7.80, 87, 2.70, 1.42, 0.95, 2.13, 3.35, 6.02, 1.10, 48.49, 86.97, 37.87, 1.82, 'Married', 'Yes', 'Rural', 1.45, 0.63, '3G', 'Huawei', 'Yes', 'Low', 35.16, 'No', 11, 78, 51.06),
+(120, 'Nigeria', 54, 'Male', 'Manager', 'Master\'s', 24007.19, 8.75, 91, 2.38, -0.18, 1.11, 1.31, 2.78, 4.59, 0.29, 15.10, 63.77, 91.16, 93.06, 'Divorced', 'Yes', 'Urban', 0.41, 0.71, 'WiFi', 'Huawei', 'Yes', 'Severe', 21.00, 'Yes', 16, 83, 1.29),
+(121, 'UK', 40, 'Female', 'Manager', 'None', 51228.31, 6.72, 85, 2.11, 2.68, 2.38, 1.21, 1.97, 6.55, 0.34, 54.54, 5.42, 97.88, 72.87, 'In Relationship', 'No', 'Urban', -0.68, 1.55, '3G', 'Other', 'Yes', 'High', 12.82, 'Yes', 15, 65, 14.30),
+(122, 'Nigeria', 15, 'Other', 'Salesperson', 'High School', 34271.01, 6.52, 65, 2.71, 1.04, 0.39, 1.55, 0.48, 6.76, 1.16, 95.81, 48.30, 39.46, 32.69, 'In Relationship', 'Yes', 'Rural', 2.17, 1.51, 'WiFi', 'Samsung', 'No', 'High', 15.26, 'No', 19, 74, 8.92),
+(123, 'USA', 58, 'Other', 'Salesperson', 'High School', 6129.85, 5.22, 73, 2.95, 2.26, 3.53, 1.36, 2.10, 6.38, 1.03, 27.49, 52.09, 91.96, 64.11, 'Divorced', 'Yes', 'Rural', 1.92, 0.79, '5G', 'Apple', 'No', 'Moderate', 16.75, 'Yes', 20, 49, 72.98),
+(124, 'USA', 29, 'Female', 'Teacher', 'None', 28261.03, 9.34, 122, 2.48, 1.95, 3.96, 0.61, 1.63, 7.48, 1.17, 89.99, 70.26, 46.44, 93.37, 'Married', 'Yes', 'Rural', 0.31, -0.35, '5G', 'Apple', 'Yes', 'Low', 31.25, 'Yes', 15, 124, 64.38),
+(125, 'Japan', 50, 'Female', 'Student', 'Bachelor\'s', 27796.22, 2.66, 99, 2.21, 1.48, 3.08, 0.78, 1.12, 7.17, 1.16, 31.21, 81.16, 83.87, 82.27, 'In Relationship', 'No', 'Urban', 0.61, -0.11, '4G', 'OnePlus', 'No', 'High', 25.06, 'No', 8, 113, 2.33),
+(126, 'Nigeria', 68, 'Female', 'Artist', 'None', 11299.18, 6.63, 80, 2.18, 1.53, 1.66, 1.47, 1.86, 6.92, 0.90, 97.82, 34.82, 51.88, 47.92, 'Single', 'No', 'Urban', 1.47, -0.69, 'WiFi', 'Huawei', 'No', 'Moderate', 14.48, 'No', 11, 106, 32.73),
+(127, 'Mexico', 41, 'Other', 'Doctor', 'PhD', 42775.84, 6.32, 131, 1.73, 1.17, 0.03, 1.40, 3.56, 6.67, 1.64, 37.41, 24.25, 68.23, 88.43, 'Single', 'Yes', 'Rural', 1.91, 0.68, '5G', 'OnePlus', 'Yes', 'High', 44.36, 'Yes', 18, 105, 47.13),
+(128, 'Nigeria', 24, 'Other', 'Unemployed', 'PhD', 9977.65, 3.94, 68, 2.47, -0.01, 1.98, 1.32, 1.20, 8.18, 0.50, 84.04, 99.60, 52.52, 15.30, 'Divorced', 'Yes', 'Urban', 1.73, -0.03, 'WiFi', 'Apple', 'No', 'Moderate', 44.17, 'No', 8, 61, 74.83),
+(129, 'Brazil', 16, 'Female', 'Teacher', 'PhD', 17617.74, 4.41, 68, 2.26, 0.33, 1.89, 2.11, 0.99, 5.87, 0.33, 6.99, 12.61, 11.84, 4.51, 'In Relationship', 'No', 'Urban', 0.50, 1.98, '4G', 'Apple', 'Yes', 'Severe', 14.95, 'Yes', 16, 99, 72.96),
+(130, 'USA', 21, 'Female', 'Unemployed', 'PhD', 23748.29, 1.76, 79, 3.89, 1.46, 1.11, 1.63, 2.62, 5.30, 0.21, 70.44, 44.66, 25.77, 24.76, 'Single', 'Yes', 'Urban', 0.90, 1.08, 'WiFi', 'Other', 'Yes', 'Low', 39.99, 'No', 11, 149, 55.98),
+(131, 'Japan', 33, 'Male', 'Unemployed', 'PhD', 22339.09, 8.12, 98, 1.54, 0.75, 2.57, 0.93, 3.18, 6.29, 0.84, 62.71, 47.34, 44.01, 65.42, 'Single', 'Yes', 'Rural', 3.37, 0.29, 'WiFi', 'Huawei', 'Yes', 'High', 5.72, 'Yes', 18, 79, 76.61),
+(132, 'Mexico', 16, 'Male', 'Doctor', 'High School', 32132.87, 6.48, 51, 2.74, -0.05, 2.43, 1.27, 2.36, 4.54, 0.77, 25.31, 78.39, 94.00, 22.32, 'In Relationship', 'Yes', 'Rural', 1.37, -0.02, '4G', 'Apple', 'Yes', 'High', 9.94, 'Yes', 9, 140, 52.67),
+(133, 'UK', 36, 'Male', 'Engineer', 'Master\'s', 18520.43, 7.64, 132, 1.36, 1.28, 0.77, 1.81, 1.42, 5.33, 1.25, 62.06, 15.12, 98.94, 76.29, 'Single', 'Yes', 'Urban', 0.44, 0.71, '5G', 'Samsung', 'No', 'Moderate', 35.39, 'No', 15, 92, 17.71),
+(134, 'Brazil', 66, 'Other', 'Unemployed', 'PhD', 42976.32, 7.15, 72, -0.68, 1.43, 2.94, 1.03, 0.07, 6.23, 1.03, 29.44, 42.51, 90.38, 14.26, 'In Relationship', 'No', 'Rural', 0.21, 0.34, '3G', 'Apple', 'No', 'Low', 21.26, 'Yes', 20, 87, 24.78),
+(135, 'UK', 31, 'Female', 'Engineer', 'Master\'s', 31112.59, 5.73, 44, 0.17, 2.59, 1.80, 2.00, 1.96, 6.98, 0.65, 89.82, 27.68, 89.38, 39.39, 'Married', 'No', 'Urban', 1.34, 0.61, 'WiFi', 'Samsung', 'Yes', 'High', 28.21, 'No', 20, 145, 80.14),
+(136, 'Mexico', 58, 'Male', 'Engineer', 'None', 13616.71, 4.97, 82, 1.59, 0.59, 2.32, 1.42, 1.60, 6.87, 0.50, 80.87, 31.97, 68.34, 36.14, 'Single', 'Yes', 'Urban', 0.79, 1.70, '4G', 'Apple', 'Yes', 'Severe', 22.02, 'Yes', 13, 165, 18.89),
+(137, 'China', 56, 'Male', 'Manager', 'PhD', 51876.07, 6.16, 105, -0.53, 1.80, 0.63, 1.54, 0.90, 7.37, 1.22, 56.55, 40.31, 8.76, 9.73, 'Married', 'No', 'Rural', 2.63, 0.53, '3G', 'Samsung', 'No', 'Severe', 17.04, 'No', 12, 104, 42.33),
+(138, 'India', 39, 'Other', 'Artist', 'Bachelor\'s', 27344.71, 10.01, 62, 2.66, 1.55, 1.52, 2.25, 0.68, 8.02, 0.97, 99.10, 33.09, 10.38, 72.53, 'Married', 'Yes', 'Urban', 0.07, 1.51, 'WiFi', 'Other', 'No', 'Severe', 38.26, 'Yes', 16, 97, 54.48),
+(139, 'Mexico', 14, 'Female', 'Salesperson', 'High School', 37368.01, 5.74, 96, 2.08, 2.20, 0.69, 0.96, 2.10, 8.81, 0.64, 73.99, 44.77, 22.93, 30.42, 'Divorced', 'Yes', 'Rural', 0.72, 0.91, 'WiFi', 'Huawei', 'No', 'High', 14.60, 'Yes', 10, 113, 8.42),
+(140, 'UK', 43, 'Female', 'Teacher', 'High School', 39142.11, 8.71, 36, 0.14, 2.33, 0.97, 0.88, 1.83, 7.13, 0.78, 33.72, 68.01, 11.77, 96.29, 'Divorced', 'No', 'Rural', 1.69, 1.44, '5G', 'Huawei', 'Yes', 'Moderate', 3.74, 'No', 16, 130, 1.38),
+(141, 'India', 13, 'Male', 'Artist', 'High School', 36994.04, 4.61, 88, 2.42, 1.70, 2.99, 1.85, 2.12, 5.38, 1.08, 77.76, 76.14, 22.89, 41.86, 'Divorced', 'No', 'Urban', 2.60, 0.79, 'WiFi', 'Apple', 'Yes', 'Low', 23.81, 'Yes', 17, 65, 73.91),
+(142, 'Germany', 54, 'Other', 'Doctor', 'None', 14950.00, 5.24, 91, 0.86, 1.69, 2.48, 2.08, 2.89, 7.60, 1.51, 31.03, 89.31, 28.12, 62.76, 'Single', 'Yes', 'Urban', 3.04, 0.16, '5G', 'Xiaomi', 'Yes', 'Low', 25.20, 'No', 18, 127, 86.27),
+(143, 'USA', 24, 'Female', 'Salesperson', 'PhD', 15987.94, 6.52, 82, 3.89, 0.93, 1.02, 1.43, 1.55, 5.50, -0.35, 45.68, 88.49, 9.28, 68.17, 'Single', 'Yes', 'Urban', 2.46, 1.64, 'WiFi', 'Samsung', 'No', 'Severe', 14.05, 'Yes', 17, 136, 2.17),
+(144, 'USA', 21, 'Other', 'Doctor', 'Master\'s', 35265.10, 5.31, 92, 1.68, 2.78, 1.37, 1.31, 2.44, 6.04, 0.63, 86.26, 75.33, 11.82, 82.02, 'Divorced', 'No', 'Urban', 0.26, 0.15, '4G', 'Huawei', 'No', 'High', 30.13, 'Yes', 8, 56, 92.27),
+(145, 'Japan', 40, 'Female', 'Artist', 'Bachelor\'s', -19435.18, 8.75, 91, 0.95, 0.90, 1.90, 1.93, 3.35, 6.16, 0.08, 73.50, 36.17, 93.04, 93.65, 'Married', 'No', 'Urban', 1.91, 1.05, 'WiFi', 'Samsung', 'Yes', 'Low', 11.83, 'No', 17, 68, 82.59),
+(146, 'India', 53, 'Male', 'Manager', 'None', 48162.19, 9.05, 42, 1.68, 1.89, -0.27, 2.44, 2.16, 6.39, 1.80, 71.20, 95.27, 37.34, 6.67, 'Married', 'No', 'Urban', 0.39, 0.04, '5G', 'Apple', 'Yes', 'Low', 15.37, 'No', 18, 71, 2.60),
+(147, 'Russia', 17, 'Male', 'Engineer', 'Bachelor\'s', 48724.89, 8.52, 64, 0.76, 2.40, 1.97, 0.39, 1.61, 6.92, 1.11, 82.83, 85.90, 34.35, 53.37, 'Single', 'Yes', 'Rural', 0.24, 0.76, '3G', 'Other', 'Yes', 'Severe', 27.44, 'No', 17, 132, 76.42),
+(148, 'Nigeria', 17, 'Male', 'Doctor', 'Master\'s', 504.00, 7.11, 7, 2.20, 1.16, 3.57, 1.97, 1.82, 5.81, 1.69, 95.15, 63.71, 67.72, 43.98, 'Divorced', 'No', 'Rural', 1.01, 0.59, '5G', 'Xiaomi', 'No', 'Low', 24.45, 'Yes', 18, 131, 18.00),
+(149, 'Japan', 14, 'Female', 'Teacher', 'High School', 2541.71, 7.13, 24, 2.27, 1.65, 0.33, 1.08, 1.99, 7.04, 0.63, 77.79, 95.28, 97.82, 47.75, 'Divorced', 'Yes', 'Rural', 1.67, 0.07, '4G', 'Apple', 'Yes', 'High', 7.49, 'Yes', 18, 146, 44.62),
+(150, 'Brazil', 49, 'Male', 'Artist', 'Master\'s', 30873.55, 4.93, 49, 2.35, 0.57, 2.32, 2.00, 1.30, 6.92, 0.89, 57.23, 28.62, 73.64, 61.37, 'Single', 'Yes', 'Urban', 1.46, 0.63, '3G', 'OnePlus', 'Yes', 'Low', 41.33, 'No', 14, 144, 68.42),
+(151, 'Germany', 60, 'Other', 'Student', 'PhD', 11935.63, 9.66, 71, 1.47, 2.69, 0.83, 1.66, 1.10, 5.67, 0.47, 24.37, 38.37, 55.28, 4.35, 'In Relationship', 'No', 'Urban', 1.67, -0.14, '4G', 'Samsung', 'No', 'Low', 12.82, 'No', 20, 91, 14.07),
+(152, 'India', 57, 'Male', 'Salesperson', 'PhD', 28173.30, 3.81, 78, 1.63, 0.80, 1.64, 1.57, 3.38, 6.70, 0.98, 16.96, 79.47, 74.16, 30.15, 'Single', 'No', 'Urban', 0.76, 1.17, '3G', 'Huawei', 'Yes', 'High', 11.27, 'Yes', 16, 88, 27.39),
+(153, 'Japan', 67, 'Male', 'Teacher', 'None', 19166.46, 2.19, 68, 1.29, 4.08, 1.11, 1.32, 3.16, 5.24, 1.34, 53.63, 87.82, 53.82, 20.58, 'Married', 'No', 'Rural', 2.60, 0.51, '3G', 'Samsung', 'No', 'Severe', 29.73, 'Yes', 13, 100, 16.96),
+(154, 'Nigeria', 68, 'Female', 'Manager', 'PhD', 37625.43, 6.29, 128, 4.17, 1.26, 2.12, 1.86, 2.73, 6.79, 0.66, 61.13, 65.78, 98.00, 69.23, 'Single', 'No', 'Rural', 0.97, 1.12, '4G', 'Samsung', 'Yes', 'Low', 23.76, 'Yes', 16, 67, 72.34),
+(155, 'Russia', 43, 'Female', 'Doctor', 'Master\'s', 56748.47, 2.68, 75, 1.47, 2.96, 1.95, 1.36, 2.72, 5.75, 1.17, 80.20, 5.89, 32.42, 18.50, 'Divorced', 'Yes', 'Rural', 0.68, 1.12, '5G', 'Apple', 'No', 'Moderate', 32.20, 'Yes', 20, 117, 83.85),
+(156, 'India', 19, 'Female', 'Engineer', 'PhD', 24577.64, 4.81, 121, 0.67, -0.21, 2.78, 1.96, 1.46, 5.73, 2.35, 48.57, 52.82, 14.13, 50.53, 'Single', 'No', 'Urban', 1.87, 1.06, 'WiFi', 'Other', 'Yes', 'High', 8.17, 'Yes', 9, 82, 63.79),
+(157, 'Japan', 37, 'Female', 'Salesperson', 'Master\'s', 22624.94, 4.32, 122, 1.34, -0.08, 3.09, 1.64, 2.23, 6.97, 0.94, 31.57, 74.44, 5.66, 45.61, 'Divorced', 'No', 'Urban', 2.40, 0.40, 'WiFi', 'Samsung', 'Yes', 'High', 23.44, 'Yes', 12, 198, 21.34),
+(158, 'Mexico', 22, 'Female', 'Doctor', 'Master\'s', 18971.20, 9.10, 66, 1.74, 1.56, 1.29, 2.16, 3.74, 6.35, 0.25, 20.61, 13.77, 78.04, 70.29, 'Divorced', 'No', 'Urban', 2.70, 1.51, '5G', 'Samsung', 'No', 'Low', 29.05, 'Yes', 8, 110, 45.82),
+(159, 'Nigeria', 58, 'Other', 'Unemployed', 'Master\'s', 46439.59, 8.68, 90, 2.97, 2.43, 1.14, 1.59, 2.36, 7.72, 1.17, 64.34, 97.32, 31.88, 30.87, 'Divorced', 'Yes', 'Urban', 2.88, 1.23, '3G', 'Huawei', 'No', 'High', 19.68, 'Yes', 20, 132, 97.65),
+(160, 'Nigeria', 36, 'Male', 'Artist', 'Master\'s', 16102.23, 7.26, 69, 1.49, 0.79, 3.61, 1.08, 0.43, 5.81, 0.90, 30.24, 3.37, 85.60, 71.44, 'Divorced', 'No', 'Rural', 0.41, -0.29, '5G', 'Huawei', 'No', 'Moderate', 5.40, 'No', 17, 94, 25.37),
+(161, 'Germany', 67, 'Female', 'Teacher', 'High School', 23786.33, 6.35, 57, 0.97, 1.72, 1.15, 1.20, 0.97, 6.96, 0.81, 51.01, 58.29, 13.54, 43.93, 'Divorced', 'Yes', 'Urban', 2.38, 1.20, '3G', 'Other', 'Yes', 'High', 20.76, 'Yes', 11, 48, 94.19),
+(162, 'Nigeria', 41, 'Female', 'Student', 'Bachelor\'s', 53180.90, 6.70, 74, 2.34, 0.66, 2.79, 1.06, 1.43, 6.17, 1.39, 41.19, 42.64, 41.16, 80.63, 'Married', 'No', 'Urban', 0.32, 0.48, '3G', 'Samsung', 'Yes', 'Moderate', 35.09, 'No', 19, 79, 43.78),
+(163, 'Japan', 60, 'Male', 'Student', 'PhD', 27263.51, 5.11, 106, 2.47, -0.29, 2.60, 1.81, 2.19, 7.37, 1.31, 87.40, 20.49, 51.17, 23.53, 'Single', 'Yes', 'Urban', 0.37, 0.48, 'WiFi', 'Samsung', 'No', 'Low', 23.45, 'No', 18, 128, 65.10),
+(164, 'USA', 69, 'Female', 'Artist', 'High School', 31537.71, 7.57, 102, 1.01, 1.85, 4.17, 2.08, 2.65, 5.52, 1.01, 21.04, 78.77, 82.94, 68.94, 'Divorced', 'Yes', 'Rural', 1.04, 1.28, '5G', 'Other', 'Yes', 'Low', 3.40, 'Yes', 20, 181, 35.44),
+(165, 'Mexico', 62, 'Male', 'Salesperson', 'None', 41561.46, 6.88, 121, 1.35, 0.38, 2.12, 1.35, 2.29, 6.84, 1.10, 41.50, 57.94, 90.20, 89.32, 'Married', 'No', 'Urban', 0.28, 0.86, '5G', 'OnePlus', 'Yes', 'High', 19.57, 'Yes', 9, 52, 59.34),
+(166, 'UK', 26, 'Male', 'Engineer', 'Bachelor\'s', 41267.43, 5.87, 100, 1.57, 1.15, 3.85, 2.39, 1.20, 6.62, 1.01, 20.37, 93.18, 55.09, 24.83, 'Married', 'Yes', 'Rural', 1.19, 1.12, '3G', 'Xiaomi', 'Yes', 'Low', 24.10, 'No', 18, 73, 78.46),
+(167, 'UK', 12, 'Female', 'Teacher', 'PhD', 40804.40, 8.75, 74, 3.07, 0.39, 1.41, 2.07, 3.87, 5.56, 0.93, 52.51, 28.97, 25.79, 72.82, 'Divorced', 'Yes', 'Rural', 0.06, 0.39, 'WiFi', 'OnePlus', 'No', 'Moderate', 31.67, 'No', 10, 98, 57.47),
+(168, 'UK', 22, 'Female', 'Teacher', 'Bachelor\'s', 20045.99, 5.28, 80, 3.21, -0.44, 0.82, 1.01, 1.14, 6.31, 1.58, 34.49, 15.54, 85.67, 35.64, 'Married', 'No', 'Rural', 0.96, 0.22, '5G', 'Apple', 'No', 'Moderate', 20.03, 'No', 9, 146, 73.69),
+(169, 'Nigeria', 39, 'Female', 'Doctor', 'PhD', 47662.15, 7.19, 50, 2.84, 2.79, 2.39, 1.09, 1.63, 5.95, 0.71, 39.92, 76.15, 20.47, 17.66, 'Single', 'Yes', 'Urban', 0.91, 1.01, '4G', 'Other', 'Yes', 'Severe', 15.26, 'No', 9, 129, 29.27),
+(170, 'India', 28, 'Other', 'Doctor', 'PhD', 32532.36, 6.29, 87, 3.38, 1.33, 1.58, 1.11, 1.93, 7.32, 0.21, 83.06, 35.12, 74.77, 41.81, 'Divorced', 'No', 'Rural', 0.97, 1.45, '5G', 'Huawei', 'No', 'Moderate', 13.04, 'No', 12, 135, 80.08),
+(171, 'Russia', 31, 'Other', 'Salesperson', 'Master\'s', 25349.61, 6.91, 145, 1.20, -0.78, 3.13, 1.06, 1.39, 7.40, -0.07, 96.93, 34.84, 65.30, 68.07, 'Divorced', 'No', 'Rural', 0.23, 0.63, '5G', 'OnePlus', 'No', 'High', 18.67, 'No', 8, 112, 25.86),
+(172, 'Japan', 46, 'Other', 'Salesperson', 'Bachelor\'s', 9713.13, 5.27, 79, 0.73, 2.65, 2.66, 1.48, 0.36, 6.08, 0.25, 0.27, 68.26, 56.50, 43.79, 'Single', 'No', 'Urban', 1.26, 1.24, '3G', 'OnePlus', 'No', 'Severe', 27.91, 'Yes', 19, 104, 70.21),
+(173, 'Germany', 49, 'Male', 'Artist', 'None', 28794.37, 8.15, 108, 2.47, 0.37, 2.31, 0.83, 3.43, 5.50, 1.44, 17.03, 13.76, 55.73, 8.35, 'Married', 'No', 'Rural', 1.07, 0.56, 'WiFi', 'Apple', 'No', 'Low', 24.10, 'Yes', 10, 114, 51.06),
+(174, 'Nigeria', 67, 'Female', 'Unemployed', 'None', 60613.27, 7.95, 32, 0.16, 2.54, 2.58, 1.80, 2.59, 5.55, 0.70, 83.46, 40.25, 72.77, 61.95, 'Married', 'Yes', 'Urban', 1.69, 0.85, 'WiFi', 'Huawei', 'No', 'High', 29.01, 'Yes', 17, 107, 9.68),
+(175, 'Japan', 68, 'Other', 'Manager', 'None', 44317.32, 8.07, 74, 1.82, 1.46, 0.78, 1.56, 1.11, 7.02, 1.09, 75.84, 63.72, 72.47, 34.09, 'In Relationship', 'Yes', 'Rural', 1.39, 0.31, '4G', 'OnePlus', 'Yes', 'Severe', 23.82, 'Yes', 16, 112, 78.73),
+(176, 'Brazil', 24, 'Other', 'Doctor', 'PhD', 32378.75, 5.77, 59, 2.55, 1.97, 0.69, 1.60, 1.47, 5.88, 0.89, 12.71, 6.71, 32.93, 39.24, 'In Relationship', 'Yes', 'Urban', 2.64, 1.02, '4G', 'Samsung', 'Yes', 'High', 19.39, 'No', 16, 103, 48.68),
+(177, 'Mexico', 59, 'Male', 'Manager', 'Bachelor\'s', 65094.79, 7.95, 80, 2.83, 2.21, 1.45, 0.70, 2.65, 4.78, 0.58, 67.25, 97.58, 80.21, 41.69, 'Divorced', 'Yes', 'Urban', 1.68, 1.08, '3G', 'Samsung', 'Yes', 'High', 26.22, 'No', 20, 91, 49.17);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `students_social_media_addiction`
 --
 
 CREATE TABLE `students_social_media_addiction` (
-  `Student_ID` int(3) DEFAULT NULL,
-  `Age` int(2) DEFAULT NULL,
+  `Student_ID` int DEFAULT NULL,
+  `Age` int DEFAULT NULL,
   `Gender` varchar(6) DEFAULT NULL,
   `Academic_Level` varchar(13) DEFAULT NULL,
   `Country` varchar(15) DEFAULT NULL,
@@ -3089,14 +3315,14 @@ CREATE TABLE `students_social_media_addiction` (
   `Most_Used_Platform` varchar(9) DEFAULT NULL,
   `Affects_Academic_Performance` varchar(3) DEFAULT NULL,
   `Sleep_Hours_Per_Night` decimal(2,1) DEFAULT NULL,
-  `Mental_Health_Score` int(1) DEFAULT NULL,
+  `Mental_Health_Score` int DEFAULT NULL,
   `Relationship_Status` varchar(15) DEFAULT NULL,
-  `Conflicts_Over_Social_Media` int(1) DEFAULT NULL,
-  `Addicted_Score` int(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Conflicts_Over_Social_Media` int DEFAULT NULL,
+  `Addicted_Score` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data for table `students_social_media_addiction`
+-- Déchargement des données de la table `students_social_media_addiction`
 --
 
 INSERT INTO `students_social_media_addiction` (`Student_ID`, `Age`, `Gender`, `Academic_Level`, `Country`, `Avg_Daily_Usage_Hours`, `Most_Used_Platform`, `Affects_Academic_Performance`, `Sleep_Hours_Per_Night`, `Mental_Health_Score`, `Relationship_Status`, `Conflicts_Over_Social_Media`, `Addicted_Score`) VALUES
