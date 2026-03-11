@@ -59,3 +59,17 @@ header nav {
   color: var(--primary);
   font-weight: 700;
 }
+
+footer {
+  background: #f5ede4;
+  color: #64748b;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+footer p {
+  font-size: 0.95rem;
+  margin: 0;
+}
