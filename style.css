@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times", "Times New Roman", sans-serif;
+}
+
+body {
+  background: #fcf9f8;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+header {
+  background: #f5ede4;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+header nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero {
+  height: 100vh;
+  background: url("img/carte.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-weight: 700;
+}
