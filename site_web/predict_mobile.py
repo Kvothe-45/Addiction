@@ -1,21 +1,3 @@
-"""
-predict_mobile.py
-─────────────────
-Appelé par mobile_addiction.php via shell_exec() :
-
-  py -W ignore predict_mobile.py <age> <gender> <occupation> <education>
-     <screen_time> <unlocks> <social_hours> <sleep_hours>
-     <mental_health> <stress> <first_phone> <has_app> <physical>
-
-Retourne sur stdout un JSON :
-  {"score": 7.0, "level": "High", "fiabilite": 91, "factors": [...]}
-
-Les trois fichiers suivants doivent être dans le même dossier :
-  - model_mobile_rf.pkl
-  - model_mobile_columns.json
-  - model_mobile_encoders.pkl
-(générés par la cellule d'export du notebook)
-"""
 
 import sys, json, os, pickle
 import numpy as np
