@@ -373,28 +373,234 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             <form id="predictionForm">
                 <div class="prediction-grid">
 
+                    <!-- ── Identité ──────────────────────────────────────────── -->
+                    <div class="form-group">
+                        <label class="form-label" for="sex">Sexe</label>
+                        <select class="form-select" id="sex" name="sex">
+                            <option value="F" selected>Féminin</option>
+                            <option value="M">Masculin</option>
+                        </select>
+                    </div>
+
                     <div class="form-group">
                         <label class="form-label" for="age">Âge</label>
                         <input class="form-input" type="number" id="age" name="age"
-                               min="15" max="22" value="17" required>
+                            min="15" max="22" value="17" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="address">Lieu de résidence</label>
+                        <select class="form-select" id="address" name="address">
+                            <option value="U" selected>Urbain</option>
+                            <option value="R">Rural</option>
+                        </select>
+                    </div>
+
+                    <!-- ── Famille ───────────────────────────────────────────── -->
+                    <div class="form-group">
+                        <label class="form-label" for="famsize">Taille de la famille</label>
+                        <select class="form-select" id="famsize" name="famsize">
+                            <option value="GT3" selected>Plus de 3 personnes</option>
+                            <option value="LE3">3 personnes ou moins</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="Pstatus">Situation des parents</label>
+                        <select class="form-select" id="Pstatus" name="Pstatus">
+                            <option value="T" selected>Ensemble</option>
+                            <option value="A">Séparés</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="Medu">Niveau d'éducation de la mère</label>
+                        <select class="form-select" id="Medu" name="Medu">
+                            <option value="0">0 — Aucun</option>
+                            <option value="1">1 — Primaire</option>
+                            <option value="2">2 — Collège</option>
+                            <option value="3" selected>3 — Lycée</option>
+                            <option value="4">4 — Supérieur</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="Fedu">Niveau d'éducation du père</label>
+                        <select class="form-select" id="Fedu" name="Fedu">
+                            <option value="0">0 — Aucun</option>
+                            <option value="1">1 — Primaire</option>
+                            <option value="2" selected>2 — Collège</option>
+                            <option value="3">3 — Lycée</option>
+                            <option value="4">4 — Supérieur</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="Mjob">Métier de la mère</label>
+                        <select class="form-select" id="Mjob" name="Mjob">
+                            <option value="teacher">Enseignante</option>
+                            <option value="health">Santé</option>
+                            <option value="services">Services</option>
+                            <option value="at_home">À la maison</option>
+                            <option value="other" selected>Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="Fjob">Métier du père</label>
+                        <select class="form-select" id="Fjob" name="Fjob">
+                            <option value="teacher">Enseignant</option>
+                            <option value="health">Santé</option>
+                            <option value="services">Services</option>
+                            <option value="at_home">À la maison</option>
+                            <option value="other" selected>Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="guardian">Tuteur légal</label>
+                        <select class="form-select" id="guardian" name="guardian">
+                            <option value="mother" selected>Mère</option>
+                            <option value="father">Père</option>
+                            <option value="other">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="famrel">Qualité des relations familiales (1 = très mauvais, 5 = excellent)</label>
+                        <select class="form-select" id="famrel" name="famrel">
+                            <option value="1">1 — Très mauvais</option>
+                            <option value="2">2 — Mauvais</option>
+                            <option value="3">3 — Moyen</option>
+                            <option value="4" selected>4 — Bon</option>
+                            <option value="5">5 — Excellent</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="famsup">Soutien éducatif familial</label>
+                        <select class="form-select" id="famsup" name="famsup">
+                            <option value="yes" selected>Oui</option>
+                            <option value="no">Non</option>
+                        </select>
+                    </div>
+
+                    <!-- ── Scolarité ──────────────────────────────────────────── -->
+                    <div class="form-group">
+                        <label class="form-label" for="reason">Raison du choix de l'école</label>
+                        <select class="form-select" id="reason" name="reason">
+                            <option value="course" selected>Préférence pour les cours</option>
+                            <option value="home">Proximité du domicile</option>
+                            <option value="reputation">Réputation de l'école</option>
+                            <option value="other">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="traveltime">Temps de trajet domicile-école</label>
+                        <select class="form-select" id="traveltime" name="traveltime">
+                            <option value="1" selected>1 — Moins de 15 min</option>
+                            <option value="2">2 — Entre 15 et 30 min</option>
+                            <option value="3">3 — Entre 30 min et 1h</option>
+                            <option value="4">4 — Plus d'1h</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="studytime">Temps d'étude hebdomadaire</label>
+                        <select class="form-select" id="studytime" name="studytime">
+                            <option value="1">1 — Moins de 2h</option>
+                            <option value="2" selected>2 — Entre 2h et 5h</option>
+                            <option value="3">3 — Entre 5h et 10h</option>
+                            <option value="4">4 — Plus de 10h</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="failures">Nombre d'échecs scolaires passés</label>
+                        <input class="form-input" type="number" id="failures" name="failures"
+                            min="0" max="4" value="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="schoolsup">Soutien scolaire supplémentaire</label>
+                        <select class="form-select" id="schoolsup" name="schoolsup">
+                            <option value="no" selected>Non</option>
+                            <option value="yes">Oui</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="paid">Cours particuliers payants</label>
+                        <select class="form-select" id="paid" name="paid">
+                            <option value="no" selected>Non</option>
+                            <option value="yes">Oui</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="nursery">A fréquenté une crèche</label>
+                        <select class="form-select" id="nursery" name="nursery">
+                            <option value="yes" selected>Oui</option>
+                            <option value="no">Non</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="higher">Souhaite faire des études supérieures</label>
+                        <select class="form-select" id="higher" name="higher">
+                            <option value="yes" selected>Oui</option>
+                            <option value="no">Non</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="absences">Nombre d'absences scolaires</label>
+                        <input class="form-input" type="number" id="absences" name="absences"
+                            min="0" max="93" value="4" required>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label" for="G1">Note 1er trimestre (G1, /20)</label>
                         <input class="form-input" type="number" id="G1" name="G1"
-                               min="0" max="20" value="11" required>
+                            min="0" max="20" value="11" required>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label" for="G2">Note 2ème trimestre (G2, /20)</label>
                         <input class="form-input" type="number" id="G2" name="G2"
-                               min="0" max="20" value="11" required>
+                            min="0" max="20" value="11" required>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label" for="G3">Note finale (G3, /20)</label>
                         <input class="form-input" type="number" id="G3" name="G3"
-                               min="0" max="20" value="11" required>
+                            min="0" max="20" value="11" required>
+                    </div>
+
+                    <!-- ── Vie sociale ────────────────────────────────────────── -->
+                    <div class="form-group">
+                        <label class="form-label" for="internet">Accès internet à la maison</label>
+                        <select class="form-select" id="internet" name="internet">
+                            <option value="yes" selected>Oui</option>
+                            <option value="no">Non</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="activities">Activités extra-scolaires</label>
+                        <select class="form-select" id="activities" name="activities">
+                            <option value="yes" selected>Oui</option>
+                            <option value="no">Non</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="romantic">En relation amoureuse</label>
+                        <select class="form-select" id="romantic" name="romantic">
+                            <option value="no" selected>Non</option>
+                            <option value="yes">Oui</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
@@ -430,71 +636,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label class="form-label" for="absences">Nombre d'absences scolaires</label>
-                        <input class="form-input" type="number" id="absences" name="absences"
-                               min="0" max="93" value="4" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="studytime">Temps d'étude hebdomadaire</label>
-                        <select class="form-select" id="studytime" name="studytime">
-                            <option value="1">1 — Moins de 2h</option>
-                            <option value="2" selected>2 — Entre 2h et 5h</option>
-                            <option value="3">3 — Entre 5h et 10h</option>
-                            <option value="4">4 — Plus de 10h</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="Mjob">Métier de la mère</label>
-                        <select class="form-select" id="Mjob" name="Mjob">
-                            <option value="teacher">Enseignante</option>
-                            <option value="health">Santé</option>
-                            <option value="services">Services</option>
-                            <option value="at_home">À la maison</option>
-                            <option value="other" selected>Autre</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="Fjob">Métier du père</label>
-                        <select class="form-select" id="Fjob" name="Fjob">
-                            <option value="teacher">Enseignant</option>
-                            <option value="health">Santé</option>
-                            <option value="services">Services</option>
-                            <option value="at_home">À la maison</option>
-                            <option value="other" selected>Autre</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="reason">Raison du choix de l'école</label>
-                        <select class="form-select" id="reason" name="reason">
-                            <option value="course" selected>Préférence pour les cours</option>
-                            <option value="home">Proximité du domicile</option>
-                            <option value="reputation">Réputation de l'école</option>
-                            <option value="other">Autre</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="activities">Activités extra-scolaires</label>
-                        <select class="form-select" id="activities" name="activities">
-                            <option value="yes" selected>Oui</option>
-                            <option value="no">Non</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="romantic">En relation amoureuse</label>
-                        <select class="form-select" id="romantic" name="romantic">
-                            <option value="no" selected>Non</option>
-                            <option value="yes">Oui</option>
-                        </select>
-                    </div>
-
-
                 </div>
 
                 <button type="submit" class="btn-predict">
@@ -514,23 +655,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                 <div class="result-bar-wrap">
                     <div class="result-bar" id="resultBar"></div>
                 </div>
-
-                <!-- Positionnement dans la distribution -->
                 <div class="result-distribution-wrap">
                     <p class="chart-title">Ton score dans la distribution générale</p>
                     <div class="result-dist-canvas">
                         <canvas id="chartResultPosition"></canvas>
                     </div>
                 </div>
-
-                <!-- Conseil si niveau élevé -->
                 <div class="pro-advice" id="proAdvice">
                     <strong>⚠ Niveau de consommation élevé détecté !</strong>
                     Ton niveau de consommation d'alcool est significativement élevé. Il peut être utile d'en parler à un professionnel de santé (médecin, psychologue ou conseiller universitaire). Des ressources comme <em>Santé Psy Étudiant</em> proposent des consultations gratuites.
                 </div>
             </div>
 
-            <!-- Message d'erreur -->
             <div id="predictionError" style="display:none; margin-top:1rem; padding:1rem; background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.2); border-radius:8px; font-family:var(--font-mono); font-size:0.8rem; color:#dc2626;"></div>
         </div>
     </div>
