@@ -3,25 +3,42 @@
    student-mat.php
    Gère aussi l'appel AJAX de prédiction
    ══════════════════════════════════════════ */
-
 // ── AJAX : prédiction ──────────────────────
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'predict') {
     header('Content-Type: application/json');
 
     $fields = [
+ // Numériques (14)
         'age'        => FILTER_VALIDATE_INT,
-        'G1'         => FILTER_VALIDATE_INT,
-        'G2'         => FILTER_VALIDATE_INT,
-        'G3'         => FILTER_VALIDATE_INT,
+        'Medu'       => FILTER_VALIDATE_INT,
+        'Fedu'       => FILTER_VALIDATE_INT,
+        'traveltime' => FILTER_VALIDATE_INT,
+        'studytime'  => FILTER_VALIDATE_INT,
+        'failures'   => FILTER_VALIDATE_INT,
+        'famrel'     => FILTER_VALIDATE_INT,
         'freetime'   => FILTER_VALIDATE_INT,
         'goout'      => FILTER_VALIDATE_INT,
         'health'     => FILTER_VALIDATE_INT,
         'absences'   => FILTER_VALIDATE_INT,
-        'studytime'  => FILTER_VALIDATE_INT,
+        'G1'         => FILTER_VALIDATE_INT,
+        'G2'         => FILTER_VALIDATE_INT,
+        'G3'         => FILTER_VALIDATE_INT,
+        // Catégorielles (16)
+        'sex'        => FILTER_SANITIZE_SPECIAL_CHARS,
+        'address'    => FILTER_SANITIZE_SPECIAL_CHARS,
+        'famsize'    => FILTER_SANITIZE_SPECIAL_CHARS,
+        'Pstatus'    => FILTER_SANITIZE_SPECIAL_CHARS,
         'Mjob'       => FILTER_SANITIZE_SPECIAL_CHARS,
         'Fjob'       => FILTER_SANITIZE_SPECIAL_CHARS,
         'reason'     => FILTER_SANITIZE_SPECIAL_CHARS,
+        'guardian'   => FILTER_SANITIZE_SPECIAL_CHARS,
+        'schoolsup'  => FILTER_SANITIZE_SPECIAL_CHARS,
+        'famsup'     => FILTER_SANITIZE_SPECIAL_CHARS,
+        'paid'       => FILTER_SANITIZE_SPECIAL_CHARS,
         'activities' => FILTER_SANITIZE_SPECIAL_CHARS,
+        'nursery'    => FILTER_SANITIZE_SPECIAL_CHARS,
+        'higher'     => FILTER_SANITIZE_SPECIAL_CHARS,
+        'internet'   => FILTER_SANITIZE_SPECIAL_CHARS,
         'romantic'   => FILTER_SANITIZE_SPECIAL_CHARS,
     ];
 
@@ -39,20 +56,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     $api_url = 'https://addiction-api.onrender.com/predict/alcohol';
 
    $payload = json_encode([
-        'age'        => (int)$data['age'],
-        'G1'         => (int)$data['G1'],
-        'G2'         => (int)$data['G2'],
-        'G3'         => (int)$data['G3'],
-        'freetime'   => (int)$data['freetime'],
-        'goout'      => (int)$data['goout'],
-        'health'     => (int)$data['health'],
-        'absences'   => (int)$data['absences'],
-        'studytime'  => (int)$data['studytime'],
-        'Mjob'       => $data['Mjob'],
-        'Fjob'       => $data['Fjob'],
-        'reason'     => $data['reason'],
-        'activities' => $data['activities'],
-        'romantic'   => $data['romantic'],
+        "age"        => (int)$data['age'],
+        "Medu"       => (int)$data['Medu'],
+        "Fedu"       => (int)$data['Fedu'],
+        "traveltime" => (int)$data['traveltime'],
+        "studytime"  => (int)$data['studytime'],
+        "failures"   => (int)$data['failures'],
+        "famrel"     => (int)$data['famrel'],
+        "freetime"   => (int)$data['freetime'],
+        "goout"      => (int)$data['goout'],
+        "health"     => (int)$data['health'],
+        "absences"   => (int)$data['absences'],
+        "G1"         => (int)$data['G1'],
+        "G2"         => (int)$data['G2'],
+        "G3"         => (int)$data['G3'],
+        "sex"        => $data['sex'],
+        "address"    => $data['address'],
+        "famsize"    => $data['famsize'],
+        "Pstatus"    => $data['Pstatus'],
+        "Mjob"       => $data['Mjob'],
+        "Fjob"       => $data['Fjob'],
+        "reason"     => $data['reason'],
+        "guardian"   => $data['guardian'],
+        "schoolsup"  => $data['schoolsup'],
+        "famsup"     => $data['famsup'],
+        "paid"       => $data['paid'],
+        "activities" => $data['activities'],
+        "nursery"    => $data['nursery'],
+        "higher"     => $data['higher'],
+        "internet"   => $data['internet'],
+        "romantic"   => $data['romantic']
     ]);
 
     
@@ -154,7 +187,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         </div>
     </div>
 </header>
-
 <!-- ── MAIN ── -->
 <main>
 <div class="page-content">
@@ -746,6 +778,7 @@ new Chart(document.getElementById('chartReason'), {
 });
 
 // 2 — Consommation moyenne par genre
+
 new Chart(document.getElementById('chartFreetimeD'), {
     // type 'line' pour tracer une droite
     type: 'line', 
