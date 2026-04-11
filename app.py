@@ -38,7 +38,7 @@ CATEGORICAL_COLS_SOCIAL = [
 ]
 
 # Alcohol
-pipeline_alcohol = joblib.load(os.path.join(BASE, "model_alcohol.pkl"))
+pipeline_alcohol = joblib.load(os.path.join(BASE, "model_alcool.pkl"))
 
 # Mobile
 with open(os.path.join(BASE, "model_mobile_rf.pkl"), "rb") as f:
