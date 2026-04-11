@@ -171,8 +171,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     <div class="stats-bar reveal">
         <div class="stat-box"><span class="stat-box-num">395</span><span class="stat-box-label">Étudiants</span></div>
         <div class="stat-box"><span class="stat-box-num">14</span><span class="stat-box-label">Variables</span></div>
-        <div class="stat-box"><span class="stat-box-num">0.0630</span><span class="stat-box-label">R² du meilleur modèle</span></div>
-        <div class="stat-box"><span class="stat-box-num">5</span><span class="stat-box-label">Modèles testés</span></div>
+        <div class="stat-box"><span class="stat-box-num">0.1638</span><span class="stat-box-label">R² du meilleur modèle</span></div>
+        <div class="stat-box"><span class="stat-box-num">4</span><span class="stat-box-label">Modèles testés</span></div>
     </div>
 
     <!-- ── 1. PRÉSENTATION DU DATASET ── -->
@@ -273,7 +273,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             Nous avons testé <strong>5 algorithmes de classification et régression</strong> avec différentes stratégies
             d'encodage (LabelEncoder, OneHotEncoder, ACP). Cependant, notre jeu de donnée à une provenance inconnue et nos modèles ne peuvent expliquer la variance que très faiblement. De plus, le déséquilibre des classes (majorité Dalc=1)
             rend tout apprentissage à nuancer. Le meilleur modèle retenu est le
-            <strong>KNN (LE)</strong> avec une R² de 0.0630.
+            <strong>KNN (LE)</strong> avec une R² de 0.1638.
         </p>
 
         <div class="models-grid">
@@ -283,16 +283,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                 <div class="model-metrics">
                     <div class="metric-row">
                         <span class="metric-label">R²</span>
-                        <span class="metric-value good">0.0630</span>
+                        <span class="metric-value good">0.1638</span>
                     </div>
                     <div class="metric-bar-wrap"><div class="metric-bar" style="width:62%"></div></div>
                     <div class="metric-row">
                         <span class="metric-label">MAE</span>
-                        <span class="metric-value">0.5856</span>
+                        <span class="metric-value">0.5391</span>
                     </div>
                     <div class="metric-row">
                         <span class="metric-label">RMSE</span>
-                        <span class="metric-value">0.8080</span>
+                        <span class="metric-value">0.8342</span>
                     </div>
                     <div class="metric-row">
                         <span class="metric-label">Encodage</span>
@@ -305,23 +305,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             <div class="model-card">
                 <p class="model-name">XGBoost</p>
                 <div class="model-metrics">
-                    <div class="metric-row"><span class="metric-label">R²</span><span class="metric-value">0.0003</span></div>
+                    <div class="metric-row"><span class="metric-label">R²</span><span class="metric-value">0.1248</span></div>
                     <div class="metric-bar-wrap"><div class="metric-bar" style="width:59%"></div></div>
-                    <div class="metric-row"><span class="metric-label">MAE</span><span class="metric-value">0.6227</span></div>
-                    <div class="metric-row"><span class="metric-label">RMSE</span><span class="metric-value">0.8346</span></div>
-                    <div class="metric-row"><span class="metric-label">Encodage</span><span class="metric-value">ACP</span></div>
-                </div>
-            </div>
-
-            <!-- XGBoost RGS -->
-            <div class="model-card">
-                <p class="model-name">XGBoost RGS</p>
-                <div class="model-metrics">
-                    <div class="metric-row"><span class="metric-label">R²</span><span class="metric-value">0.0579</span></div>
-                    <div class="metric-bar-wrap"><div class="metric-bar" style="width:58%"></div></div>
-                    <div class="metric-row"><span class="metric-label">MAE</span><span class="metric-value">0.6099</span></div>
-                    <div class="metric-row"><span class="metric-label">RMSE</span><span class="metric-value">0.8102</span></div>
-                    <div class="metric-row"><span class="metric-label">Encodage</span><span class="metric-value">ACP</span></div>
+                    <div class="metric-row"><span class="metric-label">MAE</span><span class="metric-value">0.5881</span></div>
+                    <div class="metric-row"><span class="metric-label">RMSE</span><span class="metric-value">0.8916</span></div>
+                    <div class="metric-row"><span class="metric-label">Encodage</span><span class="metric-value">LE</span></div>
                 </div>
             </div>
 
@@ -329,11 +317,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             <div class="model-card">
                 <p class="model-name">Random Forest</p>
                 <div class="model-metrics">
-                    <div class="metric-row"><span class="metric-label">R²</span><span class="metric-value">-0.0193</span></div>
+                    <div class="metric-row"><span class="metric-label">R²</span><span class="metric-value">0.1604</span></div>
                     <div class="metric-bar-wrap"><div class="metric-bar" style="width:57%"></div></div>
-                    <div class="metric-row"><span class="metric-label">MAE</span><span class="metric-value">0.6249</span></div>
-                    <div class="metric-row"><span class="metric-label">RMSE</span><span class="metric-value">0.8427</span></div>
-                    <div class="metric-row"><span class="metric-label">Encodage</span><span class="metric-value">ACP</span></div>
+                    <div class="metric-row"><span class="metric-label">MAE</span><span class="metric-value">0.5787</span></div>
+                    <div class="metric-row"><span class="metric-label">RMSE</span><span class="metric-value">0.8469</span></div>
+                    <div class="metric-row"><span class="metric-label">Encodage</span><span class="metric-value">LE</span></div>
                 </div>
             </div>
 
@@ -341,10 +329,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             <div class="model-card">
                 <p class="model-name">Naive Bayes</p>
                 <div class="model-metrics">
-                    <div class="metric-row"><span class="metric-label">R²</span><span class="metric-value">-0.0861</span></div>
+                    <div class="metric-row"><span class="metric-label">R²</span><span class="metric-value">-0.5538</span></div>
                     <div class="metric-bar-wrap"><div class="metric-bar" style="width:53%"></div></div>
-                    <div class="metric-row"><span class="metric-label">MAE</span><span class="metric-value">0.5954</span></div>
-                    <div class="metric-row"><span class="metric-label">RMSE</span><span class="metric-value">0.8699</span></div>
+                    <div class="metric-row"><span class="metric-label">MAE</span><span class="metric-value">0.7530</span></div>
+                    <div class="metric-row"><span class="metric-label">RMSE</span><span class="metric-value">1.1879</span></div>
                     <div class="metric-row"><span class="metric-label">Encodage</span><span class="metric-value">LE</span></div>
                 </div>
             </div>
@@ -353,7 +341,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             <div class="info-card" style="border-left: none;">
                 <p class="info-card-title">Pourquoi KNN ?</p>
                 <p class="info-card-text">
-                    Nos analyses ont repérés que les meilleurs paramètres étaient les suivants : 15 voisins en distance euclidienne avec l'encodage LabelEncoder.
+                    Nos analyses ont repérés que les meilleurs paramètres étaient les suivants : 9 voisins en distance manhattan avec l'encodage LabelEncoder.
                     L’algorithme des k plus proches voisins (KNN) est un classificateur d’apprentissage non paramétrique et supervisé qui s’appuie sur la notion de proximité pour réaliser des classifications ou des prédictions sur le regroupement d’un point de données.                
                 </p>
             </div>
@@ -917,7 +905,7 @@ document.getElementById('predictionForm').addEventListener('submit', async funct
         } else {
             const score = parseInt(data.score);
             const pct   = ((score - 1) / 4 * 100).toFixed(0);
-            const acc   = data.fiabilite !== undefined ? data.fiabilite : '57';
+            const acc   = data.fiabilite !== undefined ? data.fiabilite : '92';
 
             // Niveau
             let level = '', levelClass = '';

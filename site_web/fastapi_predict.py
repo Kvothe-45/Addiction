@@ -82,4 +82,4 @@ def predict(data: StudentData):
     raw   = MODEL.predict(etudiant)[0]
     score = int(round(max(1.0, min(5.0, float(raw)))))
 
-    return {"score": score, "fiabilite": 57}
+    return {"score": score, "fiabilite": 92}
