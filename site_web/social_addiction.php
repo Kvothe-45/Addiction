@@ -169,7 +169,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         <div class="stat-box"><span class="stat-box-num">705</span><span class="stat-box-label">Étudiants</span></div>
         <div class="stat-box"><span class="stat-box-num">11</span><span class="stat-box-label">Variables</span></div>
         <div class="stat-box"><span class="stat-box-num">0.99</span><span class="stat-box-label">R² meilleur modèle</span></div>
-        <div class="stat-box"><span class="stat-box-num">5</span><span class="stat-box-label">Modèles testés</span></div>
+        <div class="stat-box"><span class="stat-box-num">4</span><span class="stat-box-label">Modèles testés</span></div>
     </div>
 
     <!-- ── 1. PRÉSENTATION DU DATASET ── -->
@@ -317,18 +317,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                     <div class="metric-bar-wrap"><div class="metric-bar" style="width:98%"></div></div>
                     <div class="metric-row"><span class="metric-label">MAE</span><span class="metric-value">0.0593</span></div>
                     <div class="metric-row"><span class="metric-label">RMSE</span><span class="metric-value">0.1913</span></div>
-                    <div class="metric-row"><span class="metric-label">Encodage</span><span class="metric-value">OHE</span></div>
-                </div>
-            </div>
-
-            <!-- XGBoost rgs OHE -->
-            <div class="model-card">
-                <p class="model-name">XGBoost RGS</p>
-                <div class="model-metrics">
-                    <div class="metric-row"><span class="metric-label">R²</span><span class="metric-value">0.9851</span></div>
-                    <div class="metric-bar-wrap"><div class="metric-bar" style="width:98%"></div></div>
-                    <div class="metric-row"><span class="metric-label">MAE</span><span class="metric-value">0.0482</span></div>
-                    <div class="metric-row"><span class="metric-label">RMSE</span><span class="metric-value">0.1933</span></div>
                     <div class="metric-row"><span class="metric-label">Encodage</span><span class="metric-value">OHE</span></div>
                 </div>
             </div>

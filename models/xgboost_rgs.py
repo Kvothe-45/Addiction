@@ -36,13 +36,10 @@ def run(X_train, X_test, y_train, y_test) -> dict:
         random_state=42,
     )
 
-    # Entraînement du modèle sur les données d'apprentissage
     xgb_default.fit(X_train, y_train)
 
-    # Prédiction sur le jeu de test (données non vues pendant l'entraînement)
     y_pred_default = xgb_default.predict(X_test)
 
-    # Calcul des métriques d'évaluation du modèle par défaut
     default_metrics = {
         'mae' : mean_absolute_error(y_test, y_pred_default),
         'rmse' : np.sqrt(mean_squared_error(y_test, y_pred_default)),
@@ -55,7 +52,6 @@ def run(X_train, X_test, y_train, y_test) -> dict:
     # modèle, évalué par validation croisée (cv=5 folds) sur le score R².
     # -------------------------------------------------------------------------
 
-    # Grille des hyperparamètres à tester
 
     param_grid = {
         'n_estimators' : [50, 100, 200],
@@ -64,7 +60,6 @@ def run(X_train, X_test, y_train, y_test) -> dict:
         'subsample' : [0.8, 1.0],
     }
 
-    # GridSearchCV teste toutes les combinaisons par validation croisée
     grid_search = GridSearchCV(
         XGBRegressor(random_state=42),
         param_grid,
@@ -72,12 +67,9 @@ def run(X_train, X_test, y_train, y_test) -> dict:
         scoring='r2',
         n_jobs=-1,
     )
-    # Lancement de la recherche sur l'ensemble d'entraînement
     grid_search.fit(X_train, y_train)
  
-    # Récupération du meilleur modèle identifié par la recherche
     best_xgb = grid_search.best_estimator_
-   # Prédictions avec le modèle optimisé
     y_pred_opt = best_xgb.predict(X_test)
  
     # Métriques du modèle optimisé + meilleurs hyperparamètres trouvés
