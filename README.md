@@ -15,7 +15,7 @@ Cependant, les différents jeux de données, à l'exception de celui portant sur
 Dans un premier temps, nous avons effectué des **analyses exploratoires** pour chaque jeu de données afin de repérer les éventuelles corrélations entre les variables de nos jeux de données et d'en retirer des graphiques pertinents.
 
 
-Nous avons ensuite testé plusieurs **algorithmes de machine learning** sur chacun des quatre jeux de données, en utilisant notamment GridSearchCV pour optimiser les hyperparamètres et comparer les performances afin de retenir le modèle le plus adapté à chaque cas.
+Nous avons ensuite testé plusieurs **algorithmes de machine learning** sur chacun des quatre jeux de données, en utilisant notamment GridSearchCV pour optimiser les hyperparamètres et comparer leurs performances afin de retenir le modèle le plus adapté à chaque cas.
 
 
 Enfin, nous avons conçu un site de **présentation dédié au projet**, comprenant pour chaque jeu de données une page d'analyse ainsi qu'un **formulaire interactif** permettant d'effectuer des prédictions sur de nouvelles données à l'aide du meilleur modèle retenu.

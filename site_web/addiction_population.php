@@ -284,7 +284,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         <div class="block-label"><span class="block-label-line"></span>Modèles d'IA</div>
         <h2 class="block-title">Comparaison des modèles entraînés</h2>
         <p class="block-text">
-            Nous avons testé <strong>5 algorithmes de régression</strong> avec différentes stratégies
+            Nous avons testé <strong>4 algorithmes</strong> avec différentes stratégies
             d'encodage (LabelEncoder, OneHotEncoder, ACP). Le meilleur modèle retenu est le
             <strong>Random Forest (OHE)</strong> avec un R² de 0.6301.
         </p>
